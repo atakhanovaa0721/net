@@ -1,0 +1,2882 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="google-site-verification" content="ZLW8F9oZaBLfRPd0Bi5bZwTOJRJLpfT5Buq6_eoyZRc" />
+<style type="text/css">
+        /*.fotorama__active img{width: 100%!important; height: auto!important;}*/
+        body {visibility: hidden;}
+        .help-text-z{line-height: 22px;}
+        .widget-single-blog .author-right>p {
+            line-height: 1.4!important;
+        }
+        .author-right p{
+            max-width: initial!important;
+        }
+        @font-face {
+            font-family: 'theme_dark';
+            src: url('https://itc.ua/wp-content/themes/ITC_6.0/assets/fonts/theme_dark.eot');
+            src: url('https://itc.ua/wp-content/themes/ITC_6.0/assets/fonts/theme_dark.eot?#iefix') format('embedded-opentype'),
+            url('https://itc.ua/wp-content/themes/ITC_6.0/assets/fonts/theme_dark.woff') format('woff'),
+            url('https://itc.ua/wp-content/themes/ITC_6.0/assets/fonts/theme_dark.ttf') format('truetype'),
+            url('https://itc.ua/wp-content/themes/ITC_6.0/assets/fonts/theme_dark.svg#theme_dark') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        [class*='icondark-']:before{
+            display: inline-block;
+            font-family: 'theme_dark';
+            font-style: normal;
+            font-weight: normal;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale
+        }
+        .icondark-sun:before{content:'\0041';}
+        .icondark-moon:before{content:'\0042';}
+        @media (max-width: 768px) {
+            .jetpack-video-wrapper iframe {
+                max-width: 100%;
+                aspect-ratio: 16 / 9;
+                width: 100%;
+                height: auto;
+            }
+        }
+        #menu-mobile {
+            position: absolute;
+            z-index: 999;
+            top: 46px;
+            bottom: 0;
+            right: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(15px);
+        }
+        #menu-mobile ul {
+            padding: 30px 0;
+            margin: 0;
+        }
+        #menu-mobile ul li {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        #menu-mobile ul li a {
+            display: block;
+            padding: 7px 20px;
+            color: #fff;
+            text-decoration: none!important;
+            font-size: 19px;
+            font-weight: 700;
+        }
+        #menu-mobile ul li a:hover {
+            color: #000;
+            background: rgba(0, 151, 210, 0.2);
+        }
+        .single-blogs details{
+            cursor: pointer;
+        }
+    </style>
+<link id="theme-css" rel="stylesheet" href="https://itc.ua/wp-content/themes/ITC_6.0/itc-styles.min.css?ver=262">
+<script>
+        function getCookie(name) {
+            var cookie = " " + document.cookie;
+            var search = " " + name + "=";
+            var setStr = null;
+            var offset = 0;
+            var end = 0;
+            if (cookie.length > 0) {
+                offset = cookie.indexOf(search);
+                if (offset != -1) {
+                    offset += search.length;
+                    end = cookie.indexOf(";", offset)
+                    if (end == -1) {
+                        end = cookie.length;
+                    }
+                    setStr = unescape(cookie.substring(offset, end));
+                }
+            }
+            return(setStr);
+        }
+        function setCookie (name, value, expires, path, domain, secure) {
+            var date = new Date;
+            date.setDate(date.getDate() + expires);
+            expires = date.toUTCString();
+
+            document.cookie = name + "=" + escape(value) +
+                ((expires) ? "; expires=" + expires : "") +
+                ((path) ? "; path=" + path : "") +
+                ((domain) ? "; domain=" + domain : "") +
+                ((secure) ? "; secure" : "");
+        }
+        var dark_itc = getCookie('dark-itc');
+        if (dark_itc == 'yes') {
+            //document.getElementById("dark-toggle").checked = true;
+            var theme = document.getElementById('theme-css');
+            theme.setAttribute('href', "https://itc.ua/wp-content/themes/ITC_6.0/itc-styles_dark.css?ver=66");
+            //document.body.classList.add('body-dark');
+        }
+        var myurl_ru = "https://itc.ua/";
+        var myurl_ua = "https://itc.ua/ua/";
+        var currenturl = window.location.href;
+        var lang = getCookie('lang_1');
+        var referrer_url = document.referrer;
+        //console.log(location.href, referrer_url);
+        var botPattern = "(googlebot\/|bot|Googlebot-Mobile|Googlebot-Image|Google favicon|Mediapartners-Google|bingbot|slurp|java|wget|curl|Commons-HttpClient|Python-urllib|libwww|httpunit|nutch|phpcrawl|msnbot|jyxobot|FAST-WebCrawler|FAST Enterprise Crawler|biglotron|teoma|convera|seekbot|gigablast|exabot|ngbot|ia_archiver|GingerCrawler|webmon |httrack|webcrawler|grub.org|UsineNouvelleCrawler|antibot|netresearchserver|speedy|fluffy|bibnum.bnf|findlink|msrbot|panscient|yacybot|AISearchBot|IOI|ips-agent|tagoobot|MJ12bot|dotbot|woriobot|yanga|buzzbot|mlbot|yandexbot|purebot|Linguee Bot|Voyager|CyberPatrol|voilabot|baiduspider|citeseerxbot|spbot|twengabot|postrank|turnitinbot|scribdbot|page2rss|sitebot|linkdex|Adidxbot|blekkobot|ezooms|dotbot|Mail.RU_Bot|discobot|heritrix|findthatfile|europarchive.org|NerdByNature.Bot|sistrix crawler|ahrefsbot|Aboundex|domaincrawler|wbsearchbot|summify|ccbot|edisterbot|seznambot|ec2linkfinder|gslfbot|aihitbot|intelium_bot|facebookexternalhit|yeti|RetrevoPageAnalyzer|lb-spider|sogou|lssbot|careerbot|wotbox|wocbot|ichiro|DuckDuckBot|lssrocketcrawler|drupact|webcompanycrawler|acoonbot|openindexspider|gnam gnam spider|web-archive-net.com.bot|backlinkcrawler|coccoc|integromedb|content crawler spider|toplistbot|seokicks-robot|it2media-domain-crawler|ip-web-crawler.com|siteexplorer.info|elisabot|proximic|changedetection|blexbot|arabot|WeSEE:Search|niki-bot|CrystalSemanticsBot|rogerbot|360Spider|psbot|InterfaxScanBot|Lipperhey SEO Service|CC Metadata Scaper|g00g1e.net|GrapeshotCrawler|urlappendbot|brainobot|fr-crawler|binlar|SimpleCrawler|Livelapbot|Twitterbot|cXensebot|smtbot|bnf.fr_bot|A6-Indexer|ADmantX|Facebot|Twitterbot|OrangeBot|memorybot|AdvBot|MegaIndex|SemanticScholarBot|ltx71|nerdybot|xovibot|BUbiNG|Qwantify|archive.org_bot|Applebot|TweetmemeBot|crawler4j|findxbot|SemrushBot|yoozBot|lipperhey|y!j-asr|Domain Re-Animator Bot|AddThis)";
+        var re = new RegExp(botPattern, 'i');
+        var userAgent = navigator.userAgent;
+        if (!re.test(userAgent) && (referrer_url==='' || referrer_url.includes('facebook') || referrer_url.includes('twitter') || referrer_url.includes('https://highload.today'))) { //проверка на бота и прямой переход на сайт
+            if (myurl_ru == location.href) { //ру страница
+                if (lang) {
+                    if (lang == 'uk') {
+                        window.location.href = "https://itc.ua/ua/";
+                    } else document.write('<style type="text/css">body {visibility: visible;}</style>');
+                } else { //проверка откуда
+                    window.location.href = "https://itc.ua/ua/";
+                }
+            } else document.write('<style type="text/css">body {visibility: visible;}</style>');
+        } else document.write('<style type="text/css">body {visibility: visible;}</style>');
+    </script>
+<meta charset="UTF-8">
+<meta name="verify-admitad" content="6a8454affe" />
+<link rel="amphtml" href="https://itc.ua/news/netflix-sobyraetsya-ubrat-samyj-deshevyj-taryfnyj-plan-bez-reklamy-za-11-99/amp/" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect dns-prefetch" href="https://pagead2.googlesyndication.com/" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+<noscript>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,400&display=swap"
+        rel="stylesheet"
+        type="text/css"
+    />
+</noscript>
+<link rel="preload" href="https://itc.ua/wp-content/themes/ITC_6.0/assets/vendor/itc-icons/fonts/itc-icons.woff" as="font" type="font/woff" crossorigin>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" integrity="sha512-H9jrZiiopUdsLpg94A333EfumgUBpO9MdbxStdeITo+KEIMaNfHNvwyjjDJb+ERPaRS6DpyRlKbvPUasNItRyw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://itc.ua/wp-content/themes/ITC_6.0/assets/vendor/itc-icons/styles.css?ver=3" onload="if(media!='all')media='all'">
+<link href="https://itc.ua/wp-content/themes/ITC_6.0/assets/css/mobile-first.css?ver=25" type="text/css" rel="stylesheet" media="screen and (min-width: 768px)">
+<link rel="alternate" href="https://itc.ua/ua/novini/netflix-zbyrayetsya-prybraty-najdeshevshyj-taryfnyj-plan-bez-reklamy-za-11-99/" hreflang="uk" />
+<link rel="alternate" href="https://itc.ua/news/netflix-sobyraetsya-ubrat-samyj-deshevyj-taryfnyj-plan-bez-reklamy-za-11-99/" hreflang="ru" />
+
+<title>Netflix готовится убрать самый дешевый тарифный план без рекламы</title>
+<meta name="description" content="Netflix готовится полностью отменить самый дешевый безрекламный тарифный план Basic за" />
+<meta name="robots" content=", , max-snippet:-1, max-video-preview:-1, max-image-preview:large" />
+<link rel="canonical" href="https://itc.ua/news/netflix-sobyraetsya-ubrat-samyj-deshevyj-taryfnyj-plan-bez-reklamy-za-11-99/" />
+<meta property="og:locale" content="ru_RU" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Netflix готовится убрать самый дешевый тарифный план без рекламы" />
+<meta property="og:description" content="Netflix готовится полностью отменить самый дешевый безрекламный тарифный план Basic за" />
+<meta property="og:url" content="https://itc.ua/news/netflix-sobyraetsya-ubrat-samyj-deshevyj-taryfnyj-plan-bez-reklamy-za-11-99/" />
+<meta property="og:site_name" content="ITC.ua" />
+<meta property="article:publisher" content="https://www.facebook.com/ITC.UA" />
+<meta property="article:tag" content="Netflix" />
+<meta property="article:tag" content="тарифи" />
+<meta property="article:section" content="Новости" />
+<meta property="og:updated_time" content="2024-01-24T10:15:26+02:00" />
+<meta property="fb:app_id" content="112515425508447" />
+<meta property="og:image" content="https://itc.ua/wp-content/uploads/2024/01/j_wcxxvcx5l0eoyx8thhwfbn-6y.jpeg" />
+<meta property="og:image:secure_url" content="https://itc.ua/wp-content/uploads/2024/01/j_wcxxvcx5l0eoyx8thhwfbn-6y.jpeg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="750" />
+<meta property="og:image:alt" content="Netflix збирається прибрати найдешевший тарифний план без реклами за $11.99" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="article:published_time" content="2024-01-24T10:03:20+02:00" />
+<meta property="article:modified_time" content="2024-01-24T10:15:26+02:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Netflix готовится убрать самый дешевый тарифный план без рекламы" />
+<meta name="twitter:description" content="Netflix готовится полностью отменить самый дешевый безрекламный тарифный план Basic за" />
+<meta name="twitter:site" content="@ITCUA" />
+<meta name="twitter:creator" content="@ITCUA" />
+<meta name="twitter:image" content="https://itc.ua/wp-content/uploads/2024/01/j_wcxxvcx5l0eoyx8thhwfbn-6y.jpeg" />
+<meta name="twitter:label1" content="Автор" />
+<meta name="twitter:data1" content="Юрій Орос" />
+<meta name="twitter:label2" content="Время чтения" />
+<meta name="twitter:data2" content="Меньше минуты" />
+<script type="application/ld+json" class="rank-math-schema">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://itc.ua/#organization","name":"ITC.ua","url":"https://itc.ua","sameAs":["https://t.me/ITCUA","https://www.facebook.com/ITC.UA","https://twitter.com/ITCUA"],"logo":{"@type":"ImageObject","@id":"https://itc.ua/#logo","url":"https://itc.ua/wp-content/uploads/2018/07/itc-logo-white-1.png","contentUrl":"https://itc.ua/wp-content/uploads/2018/07/itc-logo-white-1.png","caption":"ITC.ua","inLanguage":"ru-RU","width":"800","height":"219"}},{"@type":"WebSite","@id":"https://itc.ua/#website","url":"https://itc.ua","name":"ITC.ua","publisher":{"@id":"https://itc.ua/#organization"},"inLanguage":"ru-RU"},{"@type":"ImageObject","@id":"https://itc.ua/wp-content/uploads/2024/01/j_wcxxvcx5l0eoyx8thhwfbn-6y.jpeg","url":"https://itc.ua/wp-content/uploads/2024/01/j_wcxxvcx5l0eoyx8thhwfbn-6y.jpeg","width":"1200","height":"750","caption":"Netflix \u0437\u0431\u0438\u0440\u0430\u0454\u0442\u044c\u0441\u044f \u043f\u0440\u0438\u0431\u0440\u0430\u0442\u0438 \u043d\u0430\u0439\u0434\u0435\u0448\u0435\u0432\u0448\u0438\u0439 \u0442\u0430\u0440\u0438\u0444\u043d\u0438\u0439 \u043f\u043b\u0430\u043d \u0431\u0435\u0437 \u0440\u0435\u043a\u043b\u0430\u043c\u0438 \u0437\u0430 $11.99","inLanguage":"ru-RU"},{"@type":"BreadcrumbList","@id":"https://itc.ua/news/netflix-sobyraetsya-ubrat-samyj-deshevyj-taryfnyj-plan-bez-reklamy-za-11-99/#breadcrumb","itemListElement":[{"@type":"ListItem","position":"1","item":{"@id":"https://itc.ua","name":"\u0413\u043e\u043b\u043e\u0432\u043d\u0430"}},{"@type":"ListItem","position":"2","item":{"@id":"https://itc.ua/news/","name":"\u041d\u043e\u0432\u043e\u0441\u0442\u0438"}},{"@type":"ListItem","position":"3","item":{"@id":"https://itc.ua/news/netflix-sobyraetsya-ubrat-samyj-deshevyj-taryfnyj-plan-bez-reklamy-za-11-99/","name":"Netflix \u0433\u043e\u0442\u043e\u0432\u0438\u0442\u0441\u044f \u0443\u0431\u0440\u0430\u0442\u044c \u0441\u0430\u043c\u044b\u0439 \u0434\u0435\u0448\u0435\u0432\u044b\u0439 \u0442\u0430\u0440\u0438\u0444\u043d\u044b\u0439 \u043f\u043b\u0430\u043d \u0431\u0435\u0437 \u0440\u0435\u043a\u043b\u0430\u043c\u044b"}}]},{"@type":"WebPage","@id":"https://itc.ua/news/netflix-sobyraetsya-ubrat-samyj-deshevyj-taryfnyj-plan-bez-reklamy-za-11-99/#webpage","url":"https://itc.ua/news/netflix-sobyraetsya-ubrat-samyj-deshevyj-taryfnyj-plan-bez-reklamy-za-11-99/","name":"Netflix \u0433\u043e\u0442\u043e\u0432\u0438\u0442\u0441\u044f \u0443\u0431\u0440\u0430\u0442\u044c \u0441\u0430\u043c\u044b\u0439 \u0434\u0435\u0448\u0435\u0432\u044b\u0439 \u0442\u0430\u0440\u0438\u0444\u043d\u044b\u0439 \u043f\u043b\u0430\u043d \u0431\u0435\u0437 \u0440\u0435\u043a\u043b\u0430\u043c\u044b","datePublished":"2024-01-24T10:03:20+02:00","dateModified":"2024-01-24T10:15:26+02:00","isPartOf":{"@id":"https://itc.ua/#website"},"primaryImageOfPage":{"@id":"https://itc.ua/wp-content/uploads/2024/01/j_wcxxvcx5l0eoyx8thhwfbn-6y.jpeg"},"inLanguage":"ru-RU","breadcrumb":{"@id":"https://itc.ua/news/netflix-sobyraetsya-ubrat-samyj-deshevyj-taryfnyj-plan-bez-reklamy-za-11-99/#breadcrumb"}},{"@type":"Person","@id":"https://itc.ua/author/yura-oros/","name":"\u042e\u0440\u0456\u0439 \u041e\u0440\u043e\u0441","url":"https://itc.ua/author/yura-oros/","image":{"@type":"ImageObject","@id":"https://itc.ua/wp-content/uploads/2023/07/2023-07-19-12.08.01-2-96x96.jpg","url":"https://itc.ua/wp-content/uploads/2023/07/2023-07-19-12.08.01-2-96x96.jpg","caption":"\u042e\u0440\u0456\u0439 \u041e\u0440\u043e\u0441","inLanguage":"ru-RU"},"worksFor":{"@id":"https://itc.ua/#organization"}},{"@type":"NewsArticle","headline":"Netflix \u0433\u043e\u0442\u043e\u0432\u0438\u0442\u0441\u044f \u0443\u0431\u0440\u0430\u0442\u044c \u0441\u0430\u043c\u044b\u0439 \u0434\u0435\u0448\u0435\u0432\u044b\u0439 \u0442\u0430\u0440\u0438\u0444\u043d\u044b\u0439 \u043f\u043b\u0430\u043d \u0431\u0435\u0437 \u0440\u0435\u043a\u043b\u0430\u043c\u044b","keywords":"Netflix","datePublished":"2024-01-24T10:03:20+02:00","dateModified":"2024-01-24T10:15:26+02:00","articleSection":"IT-\u0431\u0438\u0437\u043d\u0435\u0441, \u041a\u0438\u043d\u043e, \u041d\u043e\u0432\u043e\u0441\u0442\u0438","author":{"@id":"https://itc.ua/author/yura-oros/","name":"\u042e\u0440\u0456\u0439 \u041e\u0440\u043e\u0441"},"publisher":{"@id":"https://itc.ua/#organization"},"description":"Netflix \u0433\u043e\u0442\u043e\u0432\u0438\u0442\u0441\u044f \u043f\u043e\u043b\u043d\u043e\u0441\u0442\u044c\u044e \u043e\u0442\u043c\u0435\u043d\u0438\u0442\u044c \u0441\u0430\u043c\u044b\u0439 \u0434\u0435\u0448\u0435\u0432\u044b\u0439 \u0431\u0435\u0437\u0440\u0435\u043a\u043b\u0430\u043c\u043d\u044b\u0439 \u0442\u0430\u0440\u0438\u0444\u043d\u044b\u0439 \u043f\u043b\u0430\u043d Basic \u0437\u0430","name":"Netflix \u0433\u043e\u0442\u043e\u0432\u0438\u0442\u0441\u044f \u0443\u0431\u0440\u0430\u0442\u044c \u0441\u0430\u043c\u044b\u0439 \u0434\u0435\u0448\u0435\u0432\u044b\u0439 \u0442\u0430\u0440\u0438\u0444\u043d\u044b\u0439 \u043f\u043b\u0430\u043d \u0431\u0435\u0437 \u0440\u0435\u043a\u043b\u0430\u043c\u044b","@id":"https://itc.ua/news/netflix-sobyraetsya-ubrat-samyj-deshevyj-taryfnyj-plan-bez-reklamy-za-11-99/#richSnippet","isPartOf":{"@id":"https://itc.ua/news/netflix-sobyraetsya-ubrat-samyj-deshevyj-taryfnyj-plan-bez-reklamy-za-11-99/#webpage"},"image":{"@id":"https://itc.ua/wp-content/uploads/2024/01/j_wcxxvcx5l0eoyx8thhwfbn-6y.jpeg"},"inLanguage":"ru-RU","mainEntityOfPage":{"@id":"https://itc.ua/news/netflix-sobyraetsya-ubrat-samyj-deshevyj-taryfnyj-plan-bez-reklamy-za-11-99/#webpage"}}]}</script>
+
+<link rel="amphtml" href="https://itc.ua/news/netflix-sobyraetsya-ubrat-samyj-deshevyj-taryfnyj-plan-bez-reklamy-za-11-99/amp/" /><meta name="generator" content="AMP for WP 1.0.77.47" /><link rel="dns-prefetch" href="//www.recaptcha.net" />
+<link rel="dns-prefetch" href="//cdnjs.cloudflare.com" />
+<link rel="dns-prefetch" href="//use.fontawesome.com" />
+<link rel="alternate" type="application/rss+xml" title="ITC.ua &raquo; Лента" href="https://itc.ua/feed/" />
+<link rel="alternate" type="application/rss+xml" title="ITC.ua &raquo; Лента комментариев" href="https://itc.ua/comments/feed/" />
+<link rel="alternate" type="application/rss+xml" title="ITC.ua &raquo; Лента комментариев к &laquo;Netflix готовится убрать самый дешевый тарифный план без рекламы&raquo;" href="https://itc.ua/news/netflix-sobyraetsya-ubrat-samyj-deshevyj-taryfnyj-plan-bez-reklamy-za-11-99/feed/" />
+<script type="text/javascript">
+/* <![CDATA[ */
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/15.0.3\/svg\/","svgExt":".svg","source":{"wpemoji":"https:\/\/itc.ua\/wp-includes\/js\/wp-emoji.js?ver=6.6.1","twemoji":"https:\/\/itc.ua\/wp-includes\/js\/twemoji.js?ver=6.6.1"}};
+/**
+ * @output wp-includes/js/wp-emoji-loader.js
+ */
+
+/**
+ * Emoji Settings as exported in PHP via _print_emoji_detection_script().
+ * @typedef WPEmojiSettings
+ * @type {object}
+ * @property {?object} source
+ * @property {?string} source.concatemoji
+ * @property {?string} source.twemoji
+ * @property {?string} source.wpemoji
+ * @property {?boolean} DOMReady
+ * @property {?Function} readyCallback
+ */
+
+/**
+ * Support tests.
+ * @typedef SupportTests
+ * @type {object}
+ * @property {?boolean} flag
+ * @property {?boolean} emoji
+ */
+
+/**
+ * IIFE to detect emoji support and load Twemoji if needed.
+ *
+ * @param {Window} window
+ * @param {Document} document
+ * @param {WPEmojiSettings} settings
+ */
+( function wpEmojiLoader( window, document, settings ) {
+	if ( typeof Promise === 'undefined' ) {
+		return;
+	}
+
+	var sessionStorageKey = 'wpEmojiSettingsSupports';
+	var tests = [ 'flag', 'emoji' ];
+
+	/**
+	 * Checks whether the browser supports offloading to a Worker.
+	 *
+	 * @since 6.3.0
+	 *
+	 * @private
+	 *
+	 * @returns {boolean}
+	 */
+	function supportsWorkerOffloading() {
+		return (
+			typeof Worker !== 'undefined' &&
+			typeof OffscreenCanvas !== 'undefined' &&
+			typeof URL !== 'undefined' &&
+			URL.createObjectURL &&
+			typeof Blob !== 'undefined'
+		);
+	}
+
+	/**
+	 * @typedef SessionSupportTests
+	 * @type {object}
+	 * @property {number} timestamp
+	 * @property {SupportTests} supportTests
+	 */
+
+	/**
+	 * Get support tests from session.
+	 *
+	 * @since 6.3.0
+	 *
+	 * @private
+	 *
+	 * @returns {?SupportTests} Support tests, or null if not set or older than 1 week.
+	 */
+	function getSessionSupportTests() {
+		try {
+			/** @type {SessionSupportTests} */
+			var item = JSON.parse(
+				sessionStorage.getItem( sessionStorageKey )
+			);
+			if (
+				typeof item === 'object' &&
+				typeof item.timestamp === 'number' &&
+				new Date().valueOf() < item.timestamp + 604800 && // Note: Number is a week in seconds.
+				typeof item.supportTests === 'object'
+			) {
+				return item.supportTests;
+			}
+		} catch ( e ) {}
+		return null;
+	}
+
+	/**
+	 * Persist the supports in session storage.
+	 *
+	 * @since 6.3.0
+	 *
+	 * @private
+	 *
+	 * @param {SupportTests} supportTests Support tests.
+	 */
+	function setSessionSupportTests( supportTests ) {
+		try {
+			/** @type {SessionSupportTests} */
+			var item = {
+				supportTests: supportTests,
+				timestamp: new Date().valueOf()
+			};
+
+			sessionStorage.setItem(
+				sessionStorageKey,
+				JSON.stringify( item )
+			);
+		} catch ( e ) {}
+	}
+
+	/**
+	 * Checks if two sets of Emoji characters render the same visually.
+	 *
+	 * This function may be serialized to run in a Worker. Therefore, it cannot refer to variables from the containing
+	 * scope. Everything must be passed by parameters.
+	 *
+	 * @since 4.9.0
+	 *
+	 * @private
+	 *
+	 * @param {CanvasRenderingContext2D} context 2D Context.
+	 * @param {string} set1 Set of Emoji to test.
+	 * @param {string} set2 Set of Emoji to test.
+	 *
+	 * @return {boolean} True if the two sets render the same.
+	 */
+	function emojiSetsRenderIdentically( context, set1, set2 ) {
+		// Cleanup from previous test.
+		context.clearRect( 0, 0, context.canvas.width, context.canvas.height );
+		context.fillText( set1, 0, 0 );
+		var rendered1 = new Uint32Array(
+			context.getImageData(
+				0,
+				0,
+				context.canvas.width,
+				context.canvas.height
+			).data
+		);
+
+		// Cleanup from previous test.
+		context.clearRect( 0, 0, context.canvas.width, context.canvas.height );
+		context.fillText( set2, 0, 0 );
+		var rendered2 = new Uint32Array(
+			context.getImageData(
+				0,
+				0,
+				context.canvas.width,
+				context.canvas.height
+			).data
+		);
+
+		return rendered1.every( function ( rendered2Data, index ) {
+			return rendered2Data === rendered2[ index ];
+		} );
+	}
+
+	/**
+	 * Determines if the browser properly renders Emoji that Twemoji can supplement.
+	 *
+	 * This function may be serialized to run in a Worker. Therefore, it cannot refer to variables from the containing
+	 * scope. Everything must be passed by parameters.
+	 *
+	 * @since 4.2.0
+	 *
+	 * @private
+	 *
+	 * @param {CanvasRenderingContext2D} context 2D Context.
+	 * @param {string} type Whether to test for support of "flag" or "emoji".
+	 * @param {Function} emojiSetsRenderIdentically Reference to emojiSetsRenderIdentically function, needed due to minification.
+	 *
+	 * @return {boolean} True if the browser can render emoji, false if it cannot.
+	 */
+	function browserSupportsEmoji( context, type, emojiSetsRenderIdentically ) {
+		var isIdentical;
+
+		switch ( type ) {
+			case 'flag':
+				/*
+				 * Test for Transgender flag compatibility. Added in Unicode 13.
+				 *
+				 * To test for support, we try to render it, and compare the rendering to how it would look if
+				 * the browser doesn't render it correctly (white flag emoji + transgender symbol).
+				 */
+				isIdentical = emojiSetsRenderIdentically(
+					context,
+					'\uD83C\uDFF3\uFE0F\u200D\u26A7\uFE0F', // as a zero-width joiner sequence
+					'\uD83C\uDFF3\uFE0F\u200B\u26A7\uFE0F' // separated by a zero-width space
+				);
+
+				if ( isIdentical ) {
+					return false;
+				}
+
+				/*
+				 * Test for UN flag compatibility. This is the least supported of the letter locale flags,
+				 * so gives us an easy test for full support.
+				 *
+				 * To test for support, we try to render it, and compare the rendering to how it would look if
+				 * the browser doesn't render it correctly ([U] + [N]).
+				 */
+				isIdentical = emojiSetsRenderIdentically(
+					context,
+					'\uD83C\uDDFA\uD83C\uDDF3', // as the sequence of two code points
+					'\uD83C\uDDFA\u200B\uD83C\uDDF3' // as the two code points separated by a zero-width space
+				);
+
+				if ( isIdentical ) {
+					return false;
+				}
+
+				/*
+				 * Test for English flag compatibility. England is a country in the United Kingdom, it
+				 * does not have a two letter locale code but rather a five letter sub-division code.
+				 *
+				 * To test for support, we try to render it, and compare the rendering to how it would look if
+				 * the browser doesn't render it correctly (black flag emoji + [G] + [B] + [E] + [N] + [G]).
+				 */
+				isIdentical = emojiSetsRenderIdentically(
+					context,
+					// as the flag sequence
+					'\uD83C\uDFF4\uDB40\uDC67\uDB40\uDC62\uDB40\uDC65\uDB40\uDC6E\uDB40\uDC67\uDB40\uDC7F',
+					// with each code point separated by a zero-width space
+					'\uD83C\uDFF4\u200B\uDB40\uDC67\u200B\uDB40\uDC62\u200B\uDB40\uDC65\u200B\uDB40\uDC6E\u200B\uDB40\uDC67\u200B\uDB40\uDC7F'
+				);
+
+				return ! isIdentical;
+			case 'emoji':
+				/*
+				 * Four and twenty blackbirds baked in a pie.
+				 *
+				 * To test for Emoji 15.0 support, try to render a new emoji: Blackbird.
+				 *
+				 * The Blackbird is a ZWJ sequence combining 🐦 Bird and ⬛ large black square.,
+				 *
+				 * 0x1F426 (\uD83D\uDC26) == Bird
+				 * 0x200D == Zero-Width Joiner (ZWJ) that links the code points for the new emoji or
+				 * 0x200B == Zero-Width Space (ZWS) that is rendered for clients not supporting the new emoji.
+				 * 0x2B1B == Large Black Square
+				 *
+				 * When updating this test for future Emoji releases, ensure that individual emoji that make up the
+				 * sequence come from older emoji standards.
+				 */
+				isIdentical = emojiSetsRenderIdentically(
+					context,
+					'\uD83D\uDC26\u200D\u2B1B', // as the zero-width joiner sequence
+					'\uD83D\uDC26\u200B\u2B1B' // separated by a zero-width space
+				);
+
+				return ! isIdentical;
+		}
+
+		return false;
+	}
+
+	/**
+	 * Checks emoji support tests.
+	 *
+	 * This function may be serialized to run in a Worker. Therefore, it cannot refer to variables from the containing
+	 * scope. Everything must be passed by parameters.
+	 *
+	 * @since 6.3.0
+	 *
+	 * @private
+	 *
+	 * @param {string[]} tests Tests.
+	 * @param {Function} browserSupportsEmoji Reference to browserSupportsEmoji function, needed due to minification.
+	 * @param {Function} emojiSetsRenderIdentically Reference to emojiSetsRenderIdentically function, needed due to minification.
+	 *
+	 * @return {SupportTests} Support tests.
+	 */
+	function testEmojiSupports( tests, browserSupportsEmoji, emojiSetsRenderIdentically ) {
+		var canvas;
+		if (
+			typeof WorkerGlobalScope !== 'undefined' &&
+			self instanceof WorkerGlobalScope
+		) {
+			canvas = new OffscreenCanvas( 300, 150 ); // Dimensions are default for HTMLCanvasElement.
+		} else {
+			canvas = document.createElement( 'canvas' );
+		}
+
+		var context = canvas.getContext( '2d', { willReadFrequently: true } );
+
+		/*
+		 * Chrome on OS X added native emoji rendering in M41. Unfortunately,
+		 * it doesn't work when the font is bolder than 500 weight. So, we
+		 * check for bold rendering support to avoid invisible emoji in Chrome.
+		 */
+		context.textBaseline = 'top';
+		context.font = '600 32px Arial';
+
+		var supports = {};
+		tests.forEach( function ( test ) {
+			supports[ test ] = browserSupportsEmoji( context, test, emojiSetsRenderIdentically );
+		} );
+		return supports;
+	}
+
+	/**
+	 * Adds a script to the head of the document.
+	 *
+	 * @ignore
+	 *
+	 * @since 4.2.0
+	 *
+	 * @param {string} src The url where the script is located.
+	 *
+	 * @return {void}
+	 */
+	function addScript( src ) {
+		var script = document.createElement( 'script' );
+		script.src = src;
+		script.defer = true;
+		document.head.appendChild( script );
+	}
+
+	settings.supports = {
+		everything: true,
+		everythingExceptFlag: true
+	};
+
+	// Create a promise for DOMContentLoaded since the worker logic may finish after the event has fired.
+	var domReadyPromise = new Promise( function ( resolve ) {
+		document.addEventListener( 'DOMContentLoaded', resolve, {
+			once: true
+		} );
+	} );
+
+	// Obtain the emoji support from the browser, asynchronously when possible.
+	new Promise( function ( resolve ) {
+		var supportTests = getSessionSupportTests();
+		if ( supportTests ) {
+			resolve( supportTests );
+			return;
+		}
+
+		if ( supportsWorkerOffloading() ) {
+			try {
+				// Note that the functions are being passed as arguments due to minification.
+				var workerScript =
+					'postMessage(' +
+					testEmojiSupports.toString() +
+					'(' +
+					[
+						JSON.stringify( tests ),
+						browserSupportsEmoji.toString(),
+						emojiSetsRenderIdentically.toString()
+					].join( ',' ) +
+					'));';
+				var blob = new Blob( [ workerScript ], {
+					type: 'text/javascript'
+				} );
+				var worker = new Worker( URL.createObjectURL( blob ), { name: 'wpTestEmojiSupports' } );
+				worker.onmessage = function ( event ) {
+					supportTests = event.data;
+					setSessionSupportTests( supportTests );
+					worker.terminate();
+					resolve( supportTests );
+				};
+				return;
+			} catch ( e ) {}
+		}
+
+		supportTests = testEmojiSupports( tests, browserSupportsEmoji, emojiSetsRenderIdentically );
+		setSessionSupportTests( supportTests );
+		resolve( supportTests );
+	} )
+		// Once the browser emoji support has been obtained from the session, finalize the settings.
+		.then( function ( supportTests ) {
+			/*
+			 * Tests the browser support for flag emojis and other emojis, and adjusts the
+			 * support settings accordingly.
+			 */
+			for ( var test in supportTests ) {
+				settings.supports[ test ] = supportTests[ test ];
+
+				settings.supports.everything =
+					settings.supports.everything && settings.supports[ test ];
+
+				if ( 'flag' !== test ) {
+					settings.supports.everythingExceptFlag =
+						settings.supports.everythingExceptFlag &&
+						settings.supports[ test ];
+				}
+			}
+
+			settings.supports.everythingExceptFlag =
+				settings.supports.everythingExceptFlag &&
+				! settings.supports.flag;
+
+			// Sets DOMReady to false and assigns a ready function to settings.
+			settings.DOMReady = false;
+			settings.readyCallback = function () {
+				settings.DOMReady = true;
+			};
+		} )
+		.then( function () {
+			return domReadyPromise;
+		} )
+		.then( function () {
+			// When the browser can not render everything we need to load a polyfill.
+			if ( ! settings.supports.everything ) {
+				settings.readyCallback();
+
+				var src = settings.source || {};
+
+				if ( src.concatemoji ) {
+					addScript( src.concatemoji );
+				} else if ( src.wpemoji && src.twemoji ) {
+					addScript( src.twemoji );
+					addScript( src.wpemoji );
+				}
+			}
+		} );
+} )( window, document, window._wpemojiSettings );
+
+/* ]]> */
+</script>
+<style type="text/css">
+			.mistape-test, .mistape_mistake_inner {color: #E42029 !important;}
+			#mistape_dialog h2::before, #mistape_dialog .mistape_action, .mistape-letter-back {background-color: #E42029 !important; }
+			#mistape_reported_text:before, #mistape_reported_text:after {border-color: #E42029 !important;}
+            .mistape-letter-front .front-left {border-left-color: #E42029 !important;}
+            .mistape-letter-front .front-right {border-right-color: #E42029 !important;}
+            .mistape-letter-front .front-bottom, .mistape-letter-back > .mistape-letter-back-top, .mistape-letter-top {border-bottom-color: #E42029 !important;}
+            .mistape-logo svg {fill: #E42029 !important;}
+		</style>
+<link rel="stylesheet" id="ayecode-ui-css" href="https://itc.ua/wp-content/plugins/userswp/vendor/ayecode/wp-ayecode-ui/assets/css/ayecode-ui-compatibility.css?ver=0.1.85" type="text/css" media="all" />
+<style id="ayecode-ui-inline-css" type="text/css">
+body.modal-open #wpadminbar{z-index:999}.embed-responsive-16by9 .fluid-width-video-wrapper{padding:0!important;position:initial}
+</style>
+<style id="wp-emoji-styles-inline-css" type="text/css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+</style>
+<link rel="stylesheet" id="wp-block-library-css" href="https://itc.ua/wp-includes/css/dist/block-library/style.css?ver=6.6.1" type="text/css" media="all" />
+<link rel="stylesheet" id="jquery-twentytwenty-css" href="https://itc.ua/wp-content/plugins/image-comparison-block/assets/css/twentytwenty.css?ver=1679505896" type="text/css" media="all" />
+<link rel="stylesheet" id="ideabox-image-comparison-block-css" href="https://itc.ua/wp-content/plugins/image-comparison-block/build/style-index.css?ver=1679505896" type="text/css" media="all" />
+<style id="rank-math-toc-block-style-inline-css" type="text/css">
+.wp-block-rank-math-toc-block nav ol{counter-reset:item}.wp-block-rank-math-toc-block nav ol li{display:block}.wp-block-rank-math-toc-block nav ol li:before{content:counters(item, ".") ". ";counter-increment:item}
+
+</style>
+<link rel="stylesheet" id="mpp_gutenberg-css" href="https://itc.ua/wp-content/plugins/metronet-profile-picture/dist/blocks.style.build.css?ver=2.6.0" type="text/css" media="all" />
+<style id="classic-theme-styles-inline-css" type="text/css">
+/**
+ * These rules are needed for backwards compatibility.
+ * They should match the button element rules in the base theme.json file.
+ */
+.wp-block-button__link {
+	color: #ffffff;
+	background-color: #32373c;
+	border-radius: 9999px; /* 100% causes an oval, but any explicit but really high value retains the pill shape. */
+
+	/* This needs a low specificity so it won't override the rules from the button element if defined in theme.json. */
+	box-shadow: none;
+	text-decoration: none;
+
+	/* The extra 2px are added to size solids the same as the outline versions.*/
+	padding: calc(0.667em + 2px) calc(1.333em + 2px);
+
+	font-size: 1.125em;
+}
+
+.wp-block-file__button {
+	background: #32373c;
+	color: #ffffff;
+	text-decoration: none;
+}
+
+</style>
+<style id="global-styles-inline-css" type="text/css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0,44rem;--wp--preset--spacing--30: 0,67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1,5rem;--wp--preset--spacing--60: 2,25rem;--wp--preset--spacing--70: 3,38rem;--wp--preset--spacing--80: 5,06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel="stylesheet" id="hotline-linker-css" href="https://itc.ua/wp-content/plugins/itc-hotline-linker/css/hl-linker.css?ver=1.761" type="text/css" media="all" />
+<link rel="stylesheet" id="toc-screen-css" href="https://itc.ua/wp-content/plugins/table-of-contents-plus/screen.min.css?ver=2002" type="text/css" media="all" />
+<link rel="stylesheet" id="wp-polls-css" href="https://itc.ua/wp-content/plugins/wp-polls/polls-css.css?ver=2.75.5" type="text/css" media="all" />
+<style id="wp-polls-inline-css" type="text/css">
+.wp-polls .pollbar {
+	margin: 1px;
+	font-size: 6px;
+	line-height: 8px;
+	height: 8px;
+	background: #00A5D2;
+	border: 1px solid #00A5D2;
+}
+
+</style>
+<link rel="stylesheet" id="mistape-front-css" href="https://itc.ua/wp-content/plugins/mistape/assets/css/mistape-front.css?ver=1.3.9" type="text/css" media="all" />
+<link rel="stylesheet" id="blogs_style-css" href="https://itc.ua/wp-content/themes/ITC_6.0/blogs/style.css?ver=1.024" type="text/css" media="all" />
+<link rel="stylesheet" id="votes-css" href="https://itc.ua/wp-content/themes/ITC_6.0/votes/style.css?ver=1.015" type="text/css" media="all" />
+<link rel="stylesheet" id="fotorama-css-css" href="//cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css?ver=4.6.4" type="text/css" media="all" />
+<link rel="stylesheet" id="cookie-notice-front-css" href="https://itc.ua/wp-content/plugins/cookie-notice/includes/../css/front.css?ver=6.6.1" type="text/css" media="all" />
+<link rel="stylesheet" id="font-awesome-css" href="https://use.fontawesome.com/releases/v6.6.0/css/all.css?wpfas=true" type="text/css" media="all" />
+<script type="text/javascript" src="https://itc.ua/wp-includes/js/jquery/jquery.js?ver=3.7.1" id="jquery-core-js"></script>
+<script type="text/javascript" src="https://itc.ua/wp-includes/js/jquery/jquery-migrate.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<script type="text/javascript" src="https://itc.ua/wp-content/themes/ITC_6.0/assets/js/itc-scripts.min.js?ver=4" id="cehla-js"></script>
+<script type="text/javascript" id="userswp-js-extra">
+/* <![CDATA[ */
+var uwp_localize_data = {"uwp_more_char_limit":"100","uwp_more_text":"more","uwp_less_text":"less","error":"\u0427\u0442\u043e-\u0442\u043e \u043f\u043e\u0448\u043b\u043e \u043d\u0435 \u0442\u0430\u043a.","error_retry":"Something went wrong, please retry.","uwp_more_ellipses_text":"...","ajaxurl":"https:\/\/itc.ua\/wp-admin\/admin-ajax.php","login_modal":"","register_modal":"","forgot_modal":"","uwp_pass_strength":"","default_banner":"https:\/\/itc.ua\/wp-content\/plugins\/userswp\/assets\/images\/banner.png"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://itc.ua/wp-content/plugins/userswp/assets/js/users-wp.js?ver=1.2.3.11" id="userswp-js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js?ver=6.6.1" id="fancybox-js"></script>
+<script type="text/javascript" src="https://itc.ua/wp-content/themes/ITC_6.0/assets/js/jquery.touchSwipe.min.js" id="swipe-js"></script>
+<script type="text/javascript" id="my_loadmore-js-extra">
+/* <![CDATA[ */
+var itc_loadmore_params = {"ajaxurl":"https:\/\/itc.ua\/wp-admin\/admin-ajax.php","posts":"{\"page\":0,\"name\":\"netflix-sobyraetsya-ubrat-samyj-deshevyj-taryfnyj-plan-bez-reklamy-za-11-99\",\"category_name\":\"news\",\"lang\":\"ru\",\"error\":\"\",\"m\":\"\",\"p\":0,\"post_parent\":\"\",\"subpost\":\"\",\"subpost_id\":\"\",\"attachment\":\"\",\"attachment_id\":0,\"pagename\":\"\",\"page_id\":0,\"second\":\"\",\"minute\":\"\",\"hour\":\"\",\"day\":0,\"monthnum\":0,\"year\":0,\"w\":0,\"tag\":\"\",\"cat\":\"\",\"tag_id\":\"\",\"author\":\"\",\"author_name\":\"\",\"feed\":\"\",\"tb\":\"\",\"paged\":0,\"meta_key\":\"\",\"meta_value\":\"\",\"preview\":\"\",\"s\":\"\",\"sentence\":\"\",\"title\":\"\",\"fields\":\"\",\"menu_order\":\"\",\"embed\":\"\",\"category__in\":[],\"category__not_in\":[],\"category__and\":[],\"post__in\":[],\"post__not_in\":[],\"post_name__in\":[],\"tag__in\":[],\"tag__not_in\":[],\"tag__and\":[],\"tag_slug__in\":[],\"tag_slug__and\":[],\"post_parent__in\":[],\"post_parent__not_in\":[],\"author__in\":[],\"author__not_in\":[],\"search_columns\":[],\"ignore_sticky_posts\":false,\"suppress_filters\":false,\"cache_results\":true,\"update_post_term_cache\":true,\"update_menu_item_cache\":false,\"lazy_load_term_meta\":true,\"update_post_meta_cache\":true,\"post_type\":\"\",\"posts_per_page\":50,\"nopaging\":false,\"comments_per_page\":\"50\",\"no_found_rows\":false,\"order\":\"DESC\"}","current_page":"1","lang":"ru","max_page":"0"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://itc.ua/wp-content/themes/ITC_6.0/assets/js/myloadmore.js?ver=1.015" id="my_loadmore-js"></script>
+<script type="text/javascript" id="cookie-notice-front-js-extra">
+/* <![CDATA[ */
+var cnArgs = {"ajaxUrl":"https:\/\/itc.ua\/wp-admin\/admin-ajax.php","nonce":"03a49bfe99","hideEffect":"fade","position":"bottom","onScroll":"0","onScrollOffset":"100","onClick":"0","cookieName":"cookie_notice_accepted","cookieTime":"2592000","cookieTimeRejected":"2592000","cookiePath":"\/","cookieDomain":"","redirection":"0","cache":"1","refuse":"0","revokeCookies":"0","revokeCookiesOpt":"automatic","secure":"1"};
+/* ]]> */
+</script>
+<script async type="text/javascript" src="https://itc.ua/wp-content/plugins/cookie-notice/includes/../js/front.js?ver=2.2.3" id="cookie-notice-front-js"></script>
+<link rel="https://api.w.org/" href="https://itc.ua/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://itc.ua/wp-json/wp/v2/posts/2046128" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://itc.ua/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 6.6.1" />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://itc.ua/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fitc.ua%2Fnews%2Fnetflix-sobyraetsya-ubrat-samyj-deshevyj-taryfnyj-plan-bez-reklamy-za-11-99%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://itc.ua/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fitc.ua%2Fnews%2Fnetflix-sobyraetsya-ubrat-samyj-deshevyj-taryfnyj-plan-bez-reklamy-za-11-99%2F&#038;format=xml" />
+ <script type="text/javascript">
+           var ajaxurl = "https://itc.ua/wp-admin/admin-ajax.php";
+         </script><link rel="preload" as="image" href="https://itc.ua/wp-content/uploads/2024/01/j_wcxxvcx5l0eoyx8thhwfbn-6y-835x522.jpeg" /><link rel="icon" href="https://itc.ua/wp-content/uploads/2023/02/favicon-itc-48x48.png" sizes="32x32" />
+<link rel="icon" href="https://itc.ua/wp-content/uploads/2023/02/favicon-itc-300x300.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://itc.ua/wp-content/uploads/2023/02/favicon-itc-300x300.png" />
+<meta name="msapplication-TileImage" content="https://itc.ua/wp-content/uploads/2023/02/favicon-itc-300x300.png" />
+<meta name="apple-mobile-web-app-title" content="ITC.ua" />
+<meta name="application-name" content="ITC.ua" />
+<meta name="msapplication-TileColor" content="#262626" />
+<meta name="msapplication-TileImage" content="https://itc.ua/wp-content/uploads/2023/02/favicon-itc.png" />
+<meta name="theme-color" content="#262626" />
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<meta name="referrer" content="origin">
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WQ63DMM');</script>
+
+<link rel="stylesheet" type="text/css" href="https://itc.ua/wp-content/themes/ITC_6.0/assets/vendor/slick/slick.css" />
+<script src="https://itc.ua/wp-content/themes/ITC_6.0/assets/vendor/slick/slick.min.js"></script>
+
+<script async src="https://cdn.onthe.io/io.js/cvjgIk6lhCrN"></script>
+<script>
+        window._io_config = window._io_config || {};
+        window._io_config["0.2.0"] = window._io_config["0.2.0"] || [];
+        window._io_config["0.2.0"].push({
+                        page_url: "https://itc.ua/news/netflix-sobyraetsya-ubrat-samyj-deshevyj-taryfnyj-plan-bez-reklamy-za-11-99/",
+            page_url_canonical: "https://itc.ua/news/netflix-sobyraetsya-ubrat-samyj-deshevyj-taryfnyj-plan-bez-reklamy-za-11-99/",
+            page_title: "Netflix готовится убрать самый дешевый тарифный план без рекламы",
+                        page_type: "article",
+            page_language: "ru",
+            article_type: "ru",
+                        tag: ["Netflix","тарифи",],
+            article_publication_date: "Wed, 24 Jan 2024 10:03:20 +0200",
+            article_authors: ["Юрій Орос"],
+                            article_categories: ["Новости","IT-бизнес","Кино",],
+                                });
+    </script>
+
+<script> !(function () { window.googletag = window.googletag || {}; window.vmpbjs = window.vmpbjs || {}; window.vpb = window.vpb || {}; vpb.fastLoad = true; googletag.cmd = googletag.cmd || []; vmpbjs.cmd = vmpbjs.cmd || []; var cmds = []; try{ cmds = googletag.cmd.slice(0); googletag.cmd.length = 0; }catch(e){} var ready = false; function exec(cb) { return cb.call(googletag); } var overriden = false; googletag.cmd.push(function () { overriden = true; googletag.cmd.unshift = function (cb) { if (ready) { return exec(cb); } cmds.unshift(cb); if (cb._startgpt) { ready = true; for (var k = 0; k < cmds.length; k++) { exec(cmds[k]); } } }; googletag.cmd.push = function (cb) { if (ready) { return exec(cb); } cmds.push(cb); }; }); if(!overriden){ googletag.cmd.push = function (cb) { cmds.push(cb); }; googletag.cmd.unshift = function (cb) { cmds.unshift(cb); if (cb._startgpt) { ready = true; if (googletag.apiReady) { cmds.forEach(function (cb) { googletag.cmd.push(cb); }); } else { googletag.cmd = cmds; } } }; } var dayMs = 36e5, cb = parseInt(Date.now() / dayMs), vpbSrc = '//player.bidmatic.io/prebidlink/' + cb + '/wrapper_hb_493137_12584.js', pbSrc = vpbSrc.replace('wrapper_hb', 'hb'), gptSrc = '//securepubads.g.doubleclick.net/tag/js/gpt.js', c = document.head || document.body || document.documentElement; function loadScript(src, cb) { var s = document.createElement('script'); s.src = src; s.defer=false; c.appendChild(s); s.onload = cb; s.onerror = function(){ var fn = function(){}; fn._startgpt = true; googletag.cmd.unshift(fn); }; return s; } loadScript(pbSrc); loadScript(gptSrc); loadScript(vpbSrc); })() </script>
+<script type="text/javascript">
+    var ua = navigator.userAgent.toLowerCase();
+    if(ua.indexOf('mobile')==-1 && ua.indexOf('iphone')==-1 && ua.indexOf('ipad')==-1 && ua.indexOf('android')==-1) {
+        window.googletag = window.googletag || {cmd: []};
+        googletag.cmd.push(function() {
+            //googletag.defineSlot('/22614634789/itc_content_bottom_728x90', [728, 90], 'div-gpt-ad-itc_content_bottom_728x90').addService(googletag.pubads());
+            //googletag.defineSlot('/22614634789/itc_content_premium_728x90', [728, 90], 'div-gpt-ad-itc_content_premium_728x90').addService(googletag.pubads());
+            //googletag.defineSlot('/22614634789/itc_kino_1170x120', [1170, 120], 'div-gpt-ad-1637165521478-0').addService(googletag.pubads());
+            //googletag.defineSlot('/22614634789/itc_top_premium_avto_1920x250', [1920, 250], 'div-gpt-ad-1719481774398-0').addService(googletag.pubads());
+            //googletag.defineSlot('/22614634789/itc_top_premium_avto_1350x120', [1350, 120], 'div-gpt-ad-1719481839900-0').addService(googletag.pubads());
+            //googletag.defineSlot('/22614634789/itc_catfish_final', [[728, 90], [1350, 120], [970, 90]], 'div-gpt-ad-itc_catfish_final').addService(googletag.pubads());
+            //googletag.defineSlot('/22614634789/itc_undercontent_728x90', [728, 90], 'div-gpt-ad-1658475587266-0').addService(googletag.pubads());
+            //googletag.defineSlot('/22614634789/itc_content_additional_1', [728, 90], 'div-gpt-ad-itc_content_additional_1').addService(googletag.pubads());
+            //googletag.defineSlot('/22614634789/itc_content_additional_2', [728, 90], 'div-gpt-ad-itc_content_additional_2').addService(googletag.pubads());
+            googletag.defineSlot('/22614634789/itc_footer_300x600', [300, 600], 'div-gpt-ad-1698312576420-0').addService(googletag.pubads());
+            googletag.defineSlot('/22614634789/Itc_footer_2_300x600', [300, 600], 'div-gpt-ad-1698312896017-0').addService(googletag.pubads());
+            googletag.defineSlot('/22614634789/Itc_down_footer_970x250', [970, 250], 'div-gpt-ad-1698313200551-0').addService(googletag.pubads());
+            //googletag.defineSlot('/22614634789/itc_top_military_tech_1350x120', [1350, 120], 'div-gpt-ad-1699962901413-0').addService(googletag.pubads());
+            //googletag.defineSlot('/22614634789/itc_top_military_tech_1920x250', [1920, 250], 'div-gpt-ad-1699962940531-0').addService(googletag.pubads());
+            //googletag.defineSlot('/22614634789/itc_top_military_tech_300x600', [300, 600], 'div-gpt-ad-1699962977813-0').addService(googletag.pubads());
+            //googletag.defineSlot('/22614634789/itc_top_avto_300x600', [300, 600], 'div-gpt-ad-1718195569522-0').addService(googletag.pubads());
+            //googletag.defineSlot('/22614634789/itc_sidebar2_avto_300x600', [300, 600], 'div-gpt-ad-1718199154049-0').addService(googletag.pubads());
+            //googletag.defineSlot('/22614634789/itc_rightbar_middle_avto_300x250', [300, 250], 'div-gpt-ad-1718199111447-0').addService(googletag.pubads());
+            //googletag.defineSlot('/22614634789/itc_rightbar_avto_300x250', [300, 250], 'div-gpt-ad-1718195623308-0').addService(googletag.pubads());
+            //googletag.defineSlot('/22614634789/itc_rightbar_middle_avto_1_300x250', [300, 250], 'div-gpt-ad-1718199022788-0').addService(googletag.pubads());
+            //googletag.defineSlot('/22614634789/Itc_rightbar_middle_avto_2_300x600', [300, 600], 'div-gpt-ad-1718199062831-0').addService(googletag.pubads());
+            //googletag.defineSlot('/22614634789/itc.ua_comments_sidebar_avto_300x600', [300, 600], 'div-gpt-ad-1718198986010-0').addService(googletag.pubads());
+            //googletag.defineSlot('/22614634789/itc_undercontent_1_itc_mobile_avto_300x250', [300, 250], 'div-gpt-ad-1718198881350-0').addService(googletag.pubads());
+            // googletag.defineSlot('/22614634789/itc_top_tehnologiyi_1920x250', [1920, 250], 'div-gpt-ad-1704709185598-0').addService(googletag.pubads());
+            //googletag.defineSlot('/22614634789/itc_top_tehnologiyi_1350x120', [1350, 120], 'div-gpt-ad-1704709226537-0').addService(googletag.pubads());
+                            googletag.defineSlot('/22614634789/itc_top_premium_1920x250', [1920, 250], 'div-gpt-ad-1637333228303-0').addService(googletag.pubads());
+                googletag.defineSlot('/22614634789/itc_top_premium_1350x120', [1350, 120], 'div-gpt-ad-1637333253288-0').addService(googletag.pubads());
+                googletag.defineSlot('/22614634789/itc_rightbar_bottom_1_300x250', [300, 250], 'div-gpt-ad-1710494886547-0').addService(googletag.pubads());
+                googletag.defineSlot('/22614634789/itc_rightbar_bottom_2_300x250', [300, 250], 'div-gpt-ad-1710494956292-0').addService(googletag.pubads());
+                googletag.defineSlot('/22614634789/itc_rightbar_middle_300x250', [300, 250], 'div-gpt-ad-itc_rightbar_middle_300x250').addService(googletag.pubads());
+                googletag.defineSlot('/22614634789/itc_rightbar_premium_300x250', [300, 250], 'div-gpt-ad-itc_rightbar_premium_300x250').addService(googletag.pubads());
+                googletag.defineSlot('/22614634789/itc_rightbar_premium_1_300x250', [300, 250], 'div-gpt-ad-1708614339817-0').addService(googletag.pubads());
+                googletag.defineSlot('/22614634789/itc_rightbar_middle_3_300x250', [300, 250], 'div-gpt-ad-1708614461864-0').addService(googletag.pubads());
+                googletag.defineSlot('/22614634789/itc_rightbar_middle_4_300x250', [300, 250], 'div-gpt-ad-1708614537110-0').addService(googletag.pubads());
+                googletag.defineSlot('/22614634789/itc_rightbar_premium_300x600', [300, 600], 'div-gpt-ad-itc_rightbar_premium_300x600').addService(googletag.pubads());
+                googletag.defineSlot('/22614634789/itc_rightbar_bottom_300x250', [300, 250], 'div-gpt-ad-itc_rightbar_bottom_300x250').addService(googletag.pubads());
+                googletag.defineSlot('/22614634789/itc_sidebar2_300x600', [300, 600], 'div-gpt-ad-1707462095328-0').addService(googletag.pubads());
+                googletag.defineSlot('/22614634789/itc_rightbar_middle_1_300x250', [300, 250], 'div-gpt-ad-1698314443169-0').addService(googletag.pubads());
+                googletag.defineSlot('/22614634789/Itc_rightbar_middle_2_300x600', [300, 600], 'div-gpt-ad-1698314577464-0').addService(googletag.pubads());
+                googletag.defineSlot('/22614634789/itc.ua_comments_sidebar', [[300, 250], [300, 400], [300, 600]], 'div-gpt-ad-itc.ua_comments_sidebar').addService(googletag.pubads());
+                                        googletag.defineSlot('/22614634789/itc_content_medium2_300x250', [300, 250], 'div-gpt-ad-itc_content_medium2_300x250').addService(googletag.pubads());
+                googletag.defineSlot('/22614634789/itc_content_premium1_300x250', [300, 250], 'div-gpt-ad-itc_content_premium1_300x250').addService(googletag.pubads());
+                googletag.defineSlot('/22614634789/itc_content_additional_1_1', [300, 250], 'div-gpt-ad-itc_content_additional_1_1').addService(googletag.pubads());
+                googletag.defineSlot('/22614634789/itc_content_additional_1_2', [300, 250], 'div-gpt-ad-itc_content_additional_1_2').addService(googletag.pubads());
+                googletag.defineSlot('/22614634789/itc_content_additional_2_1', [300, 250], 'div-gpt-ad-itc_content_additional_2_1').addService(googletag.pubads());
+                googletag.defineSlot('/22614634789/itc_content_additional_2_2', [300, 250], 'div-gpt-ad-itc_content_additional_2_2').addService(googletag.pubads());
+                googletag.defineSlot('/22614634789/itc_content_premium_1_300x250', [300, 250], 'div-gpt-ad-1679664464284-0').addService(googletag.pubads());
+                googletag.defineSlot('/22614634789/itc_content_premium_2_300x250', [300, 250], 'div-gpt-ad-1679664505442-0').addService(googletag.pubads());
+                googletag.defineSlot('/22614634789/itc_content_bottom_1_300x250', [300, 250], 'div-gpt-ad-1679664532991-0').addService(googletag.pubads());
+                googletag.defineSlot('/22614634789/itc_content_bottom_2_300x250', [300, 250], 'div-gpt-ad-1679664563235-0').addService(googletag.pubads());
+                googletag.defineSlot('/22614634789/itc_under_content_1_300x250', [300, 250], 'div-gpt-ad-1698315681765-0').addService(googletag.pubads());
+                googletag.defineSlot('/22614634789/Itc_under_content_2_300x250', [300, 250], 'div-gpt-ad-1698315753062-0').addService(googletag.pubads());
+                googletag.defineSlot('/22614634789/itc_undercontent_1_300x250', [300, 250], 'div-gpt-ad-1679664604926-0').addService(googletag.pubads());
+                googletag.defineSlot('/22614634789/itc_undercontent_2_300x250', [300, 250], 'div-gpt-ad-1679666856092-0').addService(googletag.pubads());
+                googletag.defineSlot('/22614634789/itc_content_additional_3_1', [300, 250], 'div-gpt-ad-1707483761789-0').addService(googletag.pubads());
+                googletag.defineSlot('/22614634789/itc_content_additional_3_2', [300, 250], 'div-gpt-ad-1707483982154-0').addService(googletag.pubads());
+                googletag.defineSlot('/22614634789/itc_content_additional_4_1', [300, 250], 'div-gpt-ad-1707484079681-0').addService(googletag.pubads());
+                googletag.defineSlot('/22614634789/itc_content_additional_4_2', [300, 250], 'div-gpt-ad-1707484170319-0').addService(googletag.pubads());
+                googletag.defineSlot('/22614634789/itc_content_additional_5_1', [300, 250], 'div-gpt-ad-1707484280482-0').addService(googletag.pubads());
+                googletag.defineSlot('/22614634789/itc_content_additional_5_2', [300, 250], 'div-gpt-ad-1707484400191-0').addService(googletag.pubads());
+                googletag.defineSlot('/22614634789/itc_content_additional_6_1', [300, 250], 'div-gpt-ad-1707485637135-0').addService(googletag.pubads());
+                googletag.defineSlot('/22614634789/itc_content_additional_6_2', [300, 250], 'div-gpt-ad-1707485697253-0').addService(googletag.pubads());
+                googletag.defineSlot('/22614634789/itc_content_additional_7_1', [300, 250], 'div-gpt-ad-1707724087876-0').addService(googletag.pubads());
+                googletag.defineSlot('/22614634789/itc_content_additional_7_2', [300, 250], 'div-gpt-ad-1707724212732-0').addService(googletag.pubads());
+                googletag.defineSlot('/22614634789/itc_content_additional_8_1', [300, 250], 'div-gpt-ad-1707724291488-0').addService(googletag.pubads());
+                googletag.defineSlot('/22614634789/itc_content_additional_8_2', [300, 250], 'div-gpt-ad-1707724359355-0').addService(googletag.pubads());
+                                    googletag.pubads().enableSingleRequest();
+            googletag.pubads().collapseEmptyDivs();
+            googletag.enableServices();
+        });
+    } else {
+        window.googletag = window.googletag || {cmd: []};
+        googletag.cmd.push(function() {
+            googletag.defineSlot('/22614634789/itc.ua_mobile_content_bottom_300x250', [300, 250], 'div-gpt-ad-itc.ua_mobile_content_bottom_300x250').addService(googletag.pubads());
+            //googletag.defineSlot('/22614634789/itc.ua_mobile_undercontent_300x250', [300, 250], 'div-gpt-ad-itc.ua_mobile_undercontent_300x250').addService(googletag.pubads());
+            googletag.defineSlot('/22614634789/itc.ua_mobile_content_middle_300x250', [300, 250], 'div-gpt-ad-itc.ua_mobile_content_middle_300x250').addService(googletag.pubads());
+            googletag.defineSlot('/22614634789/itc.ua_mobile_content_premium_300x250', [300, 250], 'div-gpt-ad-itc.ua_mobile_content_premium_300x250').addService(googletag.pubads());
+            googletag.defineSlot('/22614634789/itc_kino_325x200', [325, 200], 'div-gpt-ad-1637165597859-0').addService(googletag.pubads());
+            //googletag.defineSlot('/22614634789/itc_mobile_catfish', [[300, 50], [320, 100], [320, 50], [300, 100]], 'div-gpt-ad-itc_mobile_catfish').addService(googletag.pubads());
+            googletag.defineSlot('/22614634789/itc_mobile_undercontent_300x250', [300, 250], 'div-gpt-ad-1658475482813-0').addService(googletag.pubads());
+            googletag.defineSlot('/22614634789/itc_mobile_undercontent_300x250', [300, 250], 'div-gpt-ad-1658475482813-0-2').addService(googletag.pubads());
+            googletag.defineSlot('/22614634789/itc.ua_mobile_content_middle_kino_300x250', [300, 250], 'div-gpt-ad-1718196877416-0').addService(googletag.pubads());
+            googletag.defineSlot('/22614634789/itc.ua_mobile_content_middle_game_300x250', [300, 250], 'div-gpt-ad-1718195341972-0').addService(googletag.pubads());
+            //googletag.defineSlot('/22614634789/itc.ua_mobile_content_middle_avto_300x250', [300, 250], 'div-gpt-ad-1718196431933-0').addService(googletag.pubads());
+            googletag.defineSlot('/22614634789/itc_mobile_tehnologiyi_300x250', [300, 250], 'div-gpt-ad-1718195516318-0').addService(googletag.pubads());
+            googletag.defineSlot('/22614634789/itc_mobile_300x250_tehnologiyi', [300, 250], 'div-gpt-ad-1718198761247-0').addService(googletag.pubads());
+            googletag.defineSlot('/22614634789/itc_mobile_300x250_kino', [300, 250], 'div-gpt-ad-1718199428704-0').addService(googletag.pubads());
+            googletag.defineSlot('/22614634789/itc_mobile_300x250_game', [300, 250], 'div-gpt-ad-1718198322261-0').addService(googletag.pubads());
+            //googletag.defineSlot('/22614634789/itc_mobile_300x250_avto', [300, 250], 'div-gpt-ad-1718198924010-0').addService(googletag.pubads());
+            googletag.defineSlot('/22614634789/itc_mobile_320x250_1', [320, 250], 'div-gpt-ad-itc_mobile_320x250_1').addService(googletag.pubads());
+            googletag.defineSlot('/22614634789/itc_mobile_320x250_2', [320, 250], 'div-gpt-ad-itc_mobile_320x250_2').addService(googletag.pubads());
+            googletag.defineSlot('/22614634789/itc_mobile_320x250_3', [320, 250], 'div-gpt-ad-itc_mobile_320x250_3').addService(googletag.pubads());
+            googletag.defineSlot('/22614634789/itc_mobile_320x250_4', [320, 250], 'div-gpt-ad-itc_mobile_320x250_4').addService(googletag.pubads());
+            googletag.defineSlot('/22614634789/itc_mobile_320x250_5', [320, 250], 'div-gpt-ad-itc_mobile_320x250_5').addService(googletag.pubads());
+            googletag.defineSlot('/22614634789/itc_mobile_320x250_6', [320, 250], 'div-gpt-ad-itc_mobile_320x250_6').addService(googletag.pubads());
+            googletag.defineSlot('/22614634789/itc_mobile_320x250_6', [320, 250], 'div-gpt-ad-itc_mobile_320x250_6-2').addService(googletag.pubads());
+            googletag.defineSlot('/22614634789/itc_mobile_320x250_6', [320, 250], 'div-gpt-ad-itc_mobile_320x250_6-3').addService(googletag.pubads());
+                                    //googletag.defineSlot('/22614634789/itc_mobile_top_375x250', [375, 250], 'div-gpt-ad-1654528727700-0').addService(googletag.pubads());
+            googletag.defineSlot('/22614634789/itc_mobile_300x100', [300, 100], 'div-gpt-ad-1666701307009-0').addService(googletag.pubads());
+            googletag.defineSlot('/22614634789/Itc_mobile_footer_300x600', [300, 600], 'div-gpt-ad-1698312691917-0').addService(googletag.pubads());
+            googletag.defineSlot('/22614634789/Itc_top_premium_kino_300х100', [375, 100], 'div-gpt-ad-1705055794639-0').addService(googletag.pubads());
+            //googletag.defineSlot('/22614634789/itc_mobile_military_tech_300x100', [300, 100], 'div-gpt-ad-1699440914470-0').addService(googletag.pubads());
+            googletag.defineSlot('/22614634789/itc_mobile_375x200', [375, 200], 'div-gpt-ad-1701769648981-0').addService(googletag.pubads());
+            //googletag.defineSlot('/22614634789/itc_mobile_tehnologiyi_300x100', [300, 100], 'div-gpt-ad-1704709263785-0').addService(googletag.pubads());
+            googletag.defineSlot('/22614634789/itc_mobile_tehnologiyi_300x250', [300, 250], 'div-gpt-ad-1704709298292-0').addService(googletag.pubads());
+            //googletag.defineSlot('/22614634789/itc_top_tehnologiyi_375x100', [375, 100], 'div-gpt-ad-1704986034932-0').addService(googletag.pubads());
+            //googletag.defineSlot('/22614634789/itc_mobile_military_tech_375x100', [375, 100], 'div-gpt-ad-1704986281876-0').addService(googletag.pubads());
+            googletag.pubads().enableSingleRequest();
+            googletag.pubads().collapseEmptyDivs();
+            googletag.enableServices();
+        })
+    }
+</script>
+<style>
+    #wrapper img.itc-post-thumb{
+        width: 100%;
+    }
+    iframe.instagram-media{
+        margin: 20px auto!important;
+        max-height: 546px;
+        width: auto!important;
+
+    }
+    div[data-google-query-id]:before, .course-widget>div:before, .course-widget-new>div:before{
+        content: "Реклама";
+        position: absolute;
+        top: -16px;
+        left: 0;
+        text-align: center;
+        font-size: 10px;
+        font-family: Arial,sans-serif;
+        color: #93a4ac;
+        letter-spacing: .05em;
+        white-space: nowrap;
+    }
+    .nadavi-widget{
+        max-width: 768px;
+    }
+    .body-dark #rating-and-tth-new, .body-dark #rating-and-tth-new-summary {
+        background: #0a2c45;
+    }
+    .body-dark .product-name-price {
+        background: #172027;
+    }
+    .body-dark .textwidget .jobs-vacancy {
+        background: #172027!important;
+    }
+    .articles-template-single-no_sidebar .wp-video{
+        max-width: 100%!important;
+        left: 0!important;
+        margin: 0!important;
+    }
+    .itchat-menu a {
+        color: #26dbe5!important;
+    }
+    .itchat-menu a:after{
+        content: 'new';
+        display: inline-block;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 100%;
+        color: #000000;
+        padding: 5px 8px;
+        background: #fff;
+        border-radius: 60px;
+        margin-left: 8px;
+        text-transform: lowercase;
+    }
+    .itc_loadmore_blogs a:before {
+        content: url(https://itc.ua/wp-content/themes/ITC_6.0/images/sync_outline.svg);
+        width: 28px;
+        height: 28px;
+        margin-right: 10px;
+        display: inline-block;
+        vertical-align: middle;
+    }
+    .stop-over{
+        overflow: hidden!important;
+    }
+    .block-in-loop-style2 a:hover{
+        color: #b7e1ff!important;
+    }
+    #web3-link img{
+        max-width: 100%;
+        height: auto;
+        width: 100%;
+    }
+    .image-100 img{
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    .min-1366, .max-1366, .min-1920, .max-1920{
+        overflow: hidden;
+    }
+    #execphp-21{margin: 0!important;}
+    #execphp-21 .execphpwidget>div{
+        padding: 0 20px!important;
+    }
+    .widget-single-blog{
+        width: 100%;
+    }
+    #header .menu-tags a {
+        padding: 0 5px;
+    }
+    .blocks{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: 0 -10px;
+    }
+
+    .block-gray{
+        padding: 20px;
+        background: #f3f3f3;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        -ms-flex-preferred-size: 0;
+        flex-basis: 0;
+        -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        max-width: 100%;
+        margin: 10px;
+    }
+    @media (max-width: 768px){
+        .block-gray{
+            flex: 0 0 100%;
+            margin: 10px 0;
+        }
+    }
+    @media (max-width: 1366px){
+        .min-1366{
+            display: none!important;
+        }
+    }
+    @media (min-width: 1367px){
+        .max-1366{
+            display: none!important;
+        }
+    }
+    @media (max-width: 1919px){
+        .min-1920{
+            display: none!important;
+        }
+    }
+    @media (min-width: 1920px){
+        .max-1920{
+            display: none!important;
+        }
+    }
+</style>
+</head>
+<body data-rsssl="1" class="post-template-default single single-post postid-2046128 single-format-standard wp-custom-logo itc-body no-js no-login not-front singular has-post-thumbnail singular-post cookies-not-set" style="overflow-x: hidden;">
+<div class="gtm-rubrika" data-rubrika="Новости" style="position:absolute;left:1px;top:0;height: 1px;width: 1px;"></div><div class="gtm-rubrika" data-rubrika="IT-бизнес" style="position:absolute;left:2px;top:0;height: 1px;width: 1px;"></div><div class="gtm-rubrika" data-rubrika="Кино" style="position:absolute;left:3px;top:0;height: 1px;width: 1px;"></div><script>
+
+    if (dark_itc == 'yes') {
+        document.body.classList.add('body-dark');
+    }
+    jQuery(document).ready(function($) {
+        var ruby = getCookie('ruby1');
+        var _unique = 0;
+
+        function jsonp(url, callback) {
+            var name = "_jsonp_" + _unique++;
+            var sep = url.match(/\?/) ? '&' : '?';
+            url = url + sep + 'callback=' + name;
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = url;
+            window[name] = function (data) {
+                callback.call(window, data);
+                document.head.removeChild(script);
+                script = null;
+                delete window[name];
+            };
+            document.head.appendChild(script);
+        }
+
+        function getCountry(cb) {
+            if (localStorage.country) {
+                cb(localStorage.country);
+            } else {
+                jsonp('https://wcayf.piranha.workers.dev', function (data) {
+                    localStorage.country = data.country;
+                    cb(localStorage.country);
+                });
+            }
+        }
+
+        function main() {
+            getCountry(function (country) {
+                console.log(country);
+                if (country == 'RU' || country == 'BY' && ruby != 'yes') {
+                    setCookie("ruby1", "yes", 365, '/');
+                    window.location.href = "https://itc.ua/eti-it-kompanii-uzhe-ushli-iz-rossii-vozmozhno-pora-i-vam/";
+                }
+            });
+        };
+        //main();
+    });
+</script>
+<div class="visible-sm visible-xs image-100" style="text-align:center;background: #000;">
+<a href target="_blank" id="web3-link" style rel="nofollow">
+</a>
+</div>
+<div class="min-1920 hidden-sm hidden-xs image-100" style="text-align:center;background: #000;">
+<a href target="_blank" id="web3-link1" style="display: none;">
+</a>
+<div id="top-banner-1" style="display: none">
+<div id="div-gpt-ad-1637333228303-0" style="min-width: 1920px; min-height: 250px;">
+<script>
+                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1637333228303-0'); });
+            </script>
+</div>
+</div>
+</div>
+<div class="max-1920 hidden-sm hidden-xs image-100" style="text-align:center;background: #000;">
+<a href target="_blank" id="web3-link2" style="display: none;">
+</a>
+<div id="top-banner-2" style="display: none">
+<div id="div-gpt-ad-1637333253288-0" style="min-width: 1350px; min-height: 120px;">
+<script>
+                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1637333253288-0'); });
+            </script>
+</div>
+</div>
+</div>
+<script>
+            let randomShow =  Math.floor(Math.random() * 2 + 1);
+            //let img1 = `<img src="https://itc.ua/wp-content/themes/ITC_6.0/images/banners/tcd-d.png" style="width: 100%;">`;
+            let img11 = `<img src="https://itc.ua/wp-content/themes/ITC_6.0/images/banners/store-m3.jpg" style="width: 100%;">`;
+            let img2 = `<img src="https://itc.ua/wp-content/themes/ITC_6.0/images/banners/web11-d3.jpg" style="width: 100%;">`;
+            let img22 = `<img src="https://itc.ua/wp-content/themes/ITC_6.0/images/banners/web11-m1.jpg" style="width: 100%;">`;
+            //let img3 = `<img src="https://itc.ua/wp-content/themes/ITC_6.0/images/banners/fpv.png" style="width: 100%;">`;
+            if (randomShow == 1) {
+                document.getElementById('top-banner-1').style.display = 'block';
+                document.getElementById('top-banner-2').style.display = 'block';
+                //document.getElementById('web3-link').innerHTML = img11;
+                //document.getElementById('web3-link').setAttribute('href', 'https://estore.ua/');
+                //document.getElementById('web3-link1').innerHTML = img1;
+                //document.getElementById('web3-link1').setAttribute('href', 'https://techcommsdays.com.ua/');
+            } else if (randomShow == 2) {
+                document.getElementById('web3-link1').style.display = 'block';
+                document.getElementById('web3-link2').style.display = 'block';
+                document.getElementById('web3-link').innerHTML = img22;
+                document.getElementById('web3-link').setAttribute('href', 'https://mc.today/uk/vyklyky-shtuchnogo-intelektu-dlya-seo-ta-it-dyrektora-yak-pidgotuvaty-biznes-do-shi/');
+                document.getElementById('web3-link1').innerHTML = img2;
+                document.getElementById('web3-link1').setAttribute('href', 'https://mc.today/uk/vyklyky-shtuchnogo-intelektu-dlya-seo-ta-it-dyrektora-yak-pidgotuvaty-biznes-do-shi/');
+                document.getElementById('web3-link2').innerHTML = img2;
+                document.getElementById('web3-link2').setAttribute('href', 'https://mc.today/uk/vyklyky-shtuchnogo-intelektu-dlya-seo-ta-it-dyrektora-yak-pidgotuvaty-biznes-do-shi/');
+            } /*else {
+                document.getElementById('web3-link').innerHTML = img3;
+                document.getElementById('web3-link').setAttribute('href', 'https://itc.ua/ua/novini/pidtrymaj-zbir-na-fvp-drony-dlya-79-odshbr-rozigruyemo-hudozhnij-tubus-z-kotykamy/');
+            }*/
+        </script>
+<style>
+    @media (min-width: 769px){
+        .desktop-none{display: none!important;}
+    }
+</style>
+<div id="container">
+<div class="desktop-none">
+<div id="grey_back" style="display: none;">&nbsp;</div>
+<div id="menu-mobile" style="position: absolute; right:-100%;height: 100vh;overflow-y: auto;padding-bottom: 300px;">
+<div class style="float: left;margin-left: 20px;padding: 15px 15px; background: #109BFF; border-radius: 100px;margin-top: 30px;"><a href="/ua/blogs-itc/" class="users-wp-menu users-wp-avtorizovatsya-nav" data-ps2id-api="true" style="text-transform: uppercase;font-weight: 700;font-size: 12px;line-height: 14px;color: #FFFFFF;gap: 10px;">Войти</a></div>
+<div class="mobile-search" style="margin-top: 30px;">
+<form role="search" method="get" class="search-form" action="https://itc.ua/">
+<input type="search" class="search-field" placeholder="Поиск…" value name="s"><img src="https://itc.ua/wp-content/themes/ITC_6.0/images/search-icon.svg" width="28" height="28" alt="search icon">
+</form>
+</div>
+<ul style="overflow-y:auto;width: 100%;">
+</ul>
+<script>
+	// Вставляємо елементи у мобільне меню
+	jQuery(document).ready(function() {
+		var menu_items = jQuery('#header .menu-main').html();
+		jQuery('#menu-mobile > ul').html(menu_items);				
+	});
+	jQuery('.search-form img').click(function(){
+	    jQuery('.search-form').submit();
+    });
+	</script>
+</div>
+</div>
+<header id="header" class="clearfix">
+<div class="header-top container clearfix">
+<div class="pull-right menu_btn visible-xs">
+<i class="icon icon-humberger icon-ic-menu-black-48px"></i>
+<img src="https://itc.ua/wp-content/themes/ITC_6.0/images/menu-close.svg" width="19" height="19" style="display: none;position: relative;top: -3px;left: 4px;">
+</div>
+<style>
+            .menu_btn.menu-show img{display:initial!important;}
+            .menu_btn.menu-show i{display:none!important;}
+        </style>
+<span class="logo pull-left">
+<span itemscope itemtype="http://schema.org/Organization">
+<a href="https://itc.ua/" class="custom-logo-link" title="ITC.ua" rel="home follow" itemprop="url" data-wpel-link="internal" target="_self">
+<img src="https://itc.ua/wp-content/themes/ITC_6.0/images/logo.svg" alt="ITC.ua" class="img-responsive custom-logo" width="232" height="36" itemprop="logo" loading="lazy">
+</a>
+</span>
+</span>
+<ul id="menu-glavnoe-menyu-v-shapke" class="menu-main clearfix text-center text-uppercase hidden-xs"><li id="menu-item-1031556" class="d-none menu-item menu-item-type-custom menu-item-object-custom menu-item-1031556"><a href="https://itc.ua/ua/">UA</a></li>
+<li id="menu-item-2229418" class="d-none menu-item menu-item-type-custom menu-item-object-custom menu-item-2229418"><a href="https://itc.ua/en/">EN</a></li>
+<li id="menu-item-2229425" class="d-none menu-item menu-item-type-custom menu-item-object-custom menu-item-2229425"><a href="https://itc.ua/es/">ES</a></li>
+<li id="menu-item-1031563" class="d-none menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1031563"><a href="https://itc.ua/">RU</a></li>
+<li id="menu-item-759317" class="top-element-menu menu-item menu-item-type-custom menu-item-object-custom menu-item-759317"><a href="/news/">Новости</a></li>
+<li id="menu-item-952150" class="top-element-menu menu-item menu-item-type-taxonomy menu-item-object-category menu-item-952150"><a href="https://itc.ua/review_cat/">Обзоры</a></li>
+<li id="menu-item-162228" class="top-element-menu menu-item menu-item-type-taxonomy menu-item-object-category menu-item-162228"><a href="https://itc.ua/stati/">Статьи</a></li>
+<li id="menu-item-149596" class="blogs top-element-menu menu-item menu-item-type-custom menu-item-object-custom menu-item-149596"><a href="/ua/blogs/">Посты</a></li>
+<li id="menu-item-1012222" class="visible-xs menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1012222"><a href="https://itc.ua/ukraina/">Украина</a></li>
+<li id="menu-item-995681" class="visible-xs menu-item menu-item-type-taxonomy menu-item-object-category menu-item-995681"><a href="https://itc.ua/techno/">Технологии</a></li>
+<li id="menu-item-995667" class="visible-xs menu-item menu-item-type-taxonomy menu-item-object-category menu-item-995667"><a href="https://itc.ua/nauka-i-kosmos/">Наука и космос</a></li>
+<li id="menu-item-1687789" class="visible-xs menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1687789"><a href="https://itc.ua/blokcheyn-ru/">Крипто</a></li>
+<li id="menu-item-995688" class="visible-xs menu-item menu-item-type-taxonomy menu-item-object-category menu-item-995688"><a href="https://itc.ua/ustroystva/">Устройства</a></li>
+<li id="menu-item-995674" class="visible-xs menu-item menu-item-type-taxonomy menu-item-object-category menu-item-995674"><a href="https://itc.ua/ua/soft/">Софт</a></li>
+<li id="menu-item-1874811" class="visible-xs menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1874811"><a href="https://itc.ua/military-tech/">Military Tech</a></li>
+<li id="menu-item-1687782" class="visible-xs menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1687782"><a href="https://itc.ua/avto/">Авто</a></li>
+<li id="menu-item-1687768" class="visible-xs menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1687768"><a href="https://itc.ua/igry/">Игры</a></li>
+<li id="menu-item-1687775" class="visible-xs menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-1687775"><a href="https://itc.ua/cinema/">Кино</a></li>
+<li id="menu-item-2313770" class="visible-xs menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2313770"><a href="https://itc.ua/partner-news/">Спецпроекты</a></li>
+</ul>
+<div class="login-link" style="padding: 11px 18px; background: #109BFF; border-radius: 100px; position: absolute; right: 0; top: 12px;"><a href="/ua/blogs-itc/" class="users-wp-menu users-wp-avtorizovatsya-nav" data-ps2id-api="true" style="font-weight: 700;font-size: 12px;line-height: 14px;color: #FFFFFF;gap: 10px;">Войти</a></div>
+<div class="switch-dark">
+<input id="dark-toggle" class="dark-check-toggle dark-check-toggle-round-flat" type="checkbox" onchange="toggleTheme()">
+<label for="dark-toggle">
+<span class="on"><a class="icondark-sun"></a></span>
+<span class="off"><a class="icondark-moon"></a></span>
+</label>
+</div>
+<script>
+            var dark_itc = getCookie('dark-itc');
+            if (dark_itc == 'yes') {
+                document.getElementById("dark-toggle").checked = true;
+            }
+            function toggleTheme() {
+                var theme = document.getElementById('theme-css');
+
+                if (theme.getAttribute('href').indexOf('itc-styles.min.css') > 0) {
+                    setCookie("dark-itc", "yes", 365, '/');
+                                        window.location.reload();
+                                    } else {
+                    setCookie("dark-itc", "no", 365, '/');
+                                        window.location.reload();
+                                    }
+            }
+        </script>
+<style>
+            .lang-switch{
+                position: absolute;
+                display: inline-block;
+                margin: 0 5px;
+                top: 19px;
+                                right: 120px;
+                            }
+                        .pll-switcher-select{
+                padding: 6px 10px;
+                border: none;
+                border-radius: 20px;
+                color: #fff;
+                background: #2a333a;
+                text-transform: uppercase;
+                outline: none;
+            }
+            @media(max-width: 768px){
+                .lang-switch {
+                    top: 5px;
+                    right: 50px;
+                }
+                .switch-dark {
+                    right: 120px;
+                }
+            }
+            /*select.pll-switcher-select option[lang="es-ES"]{
+                display: none;
+            }*/
+        </style>
+<div class="lang-switch">
+<select name="lang_choice_1" id="lang_choice_1" class="pll-switcher-select">
+<option value="https://itc.ua/ua/novini/netflix-zbyrayetsya-prybraty-najdeshevshyj-taryfnyj-plan-bez-reklamy-za-11-99/" lang="uk">ua</option>
+<option value="https://itc.ua/en/" lang="en-US">en</option>
+<option value="https://itc.ua/es/" lang="es-ES">es</option>
+<option value="https://itc.ua/news/netflix-sobyraetsya-ubrat-samyj-deshevyj-taryfnyj-plan-bez-reklamy-za-11-99/" lang="ru-RU" selected="selected">ru</option>
+</select>
+<script type="text/javascript">
+					document.getElementById( "lang_choice_1" ).addEventListener( "change", function ( event ) { location.href = event.currentTarget.value; } )
+				</script> </div>
+<script>
+            // Проверяем, является ли устройство мобильным
+                /*var select = document.getElementById("lang_choice_1");
+                select.remove(2);*/
+        </script>
+
+</div>
+<script>
+jQuery(document).ready(function(){
+	jQuery( ".search_btn" ).click(function() {
+		jQuery( "#black-search" ).slideToggle( "fast", function() {
+			jQuery('body').toggleClass('open-search-form');
+			jQuery('.search_btn').toggleClass('open');
+			jQuery( "#black-search #s" ).focus();
+		});
+	});
+});
+</script>
+<div id="black-search" class>
+<form role="search" method="get" class="form-search" id="searchform" action="https://itc.ua/">
+<div class="input-group">
+<span class="input-group-addon hidden-xs">Поиск:</span>
+<input type="text" name="s" id="s" class="form-control input-lg" autocomplete="off" spellcheck="false" required="required" placeholder="что вы хотите найти?">
+<span class="input-group-btn">
+<button class="btn btn-default btn-lg" id="searchsubmit">
+<i class="icon icon-ic-search-black-48px"></i>
+</button>
+</span>
+</div>
+</form>
+</div>
+<div class="menu-tags text-center visible-md visible-lg clearfix">
+<div class="container" style="position: relative;">
+<style>
+                    #menu-featured ul, #menu-featured-ua ul{
+                        display: none;
+                        position: absolute;
+                        background: #fff;
+                        width: 210px;
+                        box-shadow: 0px 0px 2px 2px #c1c1c1;
+                        right: 0;
+                        text-align: left;
+                    }
+                    #header #menu-featured .menu-item-has-children a, #header #menu-featured-ua .menu-item-has-children a{
+                        line-height: 40px;
+                    }
+                    #menu-featured .menu-item-has-children, #menu-featured-ua .menu-item-has-children{
+                        position: relative;
+                    }
+                    #menu-featured .menu-item-has-children > a:after, #menu-featured-ua .menu-item-has-children > a:after{
+                        content: url(https://itc.ua/wp-content/themes/ITC_6.0/images/down.svg);
+                        display: inline-block;
+                        position: relative;
+                        top: 6px;
+                        filter: invert(1);
+                    }
+                    #menu-featured .menu-item-has-children:hover > a:after, #menu-featured-ua .menu-item-has-children:hover > a:after{
+                        transform: rotate(180deg);
+                        top: -6px;
+                    }
+                    #menu-featured .menu-item-has-children:hover ul, #menu-featured-ua .menu-item-has-children:hover ul{
+                        display: block;
+                    }
+                    #menu-mobile .menu-item-has-children ul.sub-menu{
+                        display: none;
+                        padding: 0;
+                    }
+                    #menu-mobile ul.sub-menu li a{
+                        font-size: 17px;
+                    }
+                    #menu-mobile .menu-item-has-children > a{
+                        position: relative;
+                    }
+                    #menu-mobile .menu-item-has-children > a:after{
+                        content: url(https://itc.ua/wp-content/themes/ITC_6.0/images/down.svg);
+                        display: block;
+                        position: absolute;
+                        top: 10px;
+                        right: 20px;
+                    }
+                    #menu-mobile .menu-item-has-children:hover ul.sub-menu{
+                        display: block;
+                    }
+                    #menu-mobile .menu-item-has-children:hover > a:after{
+                        transform: rotate(180deg);
+                        top: 0px;
+                    }
+                </style>
+<ul id="menu-featured" class><li id="menu-item-1012257" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1012257"><a href="https://itc.ua/ukraina/">Украина</a></li>
+<li id="menu-item-919877" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-919877"><a href="https://itc.ua/techno/">Технологии</a></li>
+<li id="menu-item-919884" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-919884"><a href="https://itc.ua/nauka-i-kosmos/">Наука/Космос</a></li>
+<li id="menu-item-2590321" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2590321"><a href="https://itc.ua/blokcheyn-ru/">Крипто</a></li>
+<li id="menu-item-1342854" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-1342854"><a href="https://itc.ua/biznes/">IT-бизнес</a></li>
+<li id="menu-item-919891" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-919891"><a href="https://itc.ua/ustroystva/">Устройства</a></li>
+<li id="menu-item-919905" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-919905"><a href="https://itc.ua/soft-ru/">Софт</a></li>
+<li id="menu-item-1874783" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1874783"><a href="https://itc.ua/military-tech/">Military Tech</a></li>
+<li id="menu-item-1687845" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1687845"><a href="https://itc.ua/avto/">Авто</a></li>
+<li id="menu-item-1687852" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1687852"><a href="https://itc.ua/igry/">Игры</a></li>
+<li id="menu-item-1687859" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor current-menu-parent current-post-parent menu-item-1687859"><a href="https://itc.ua/cinema/">Кино</a></li>
+<li id="menu-item-1372595" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1372595"><a href="https://itc.ua/wtf/">WTF</a></li>
+<li id="menu-item-2313763" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2313763"><a href="https://itc.ua/partner-news/">Спецпроекты</a></li>
+</ul> <div class="pull-right search-icon">
+<div class="search_btn">
+<img src="https://itc.ua/wp-content/themes/ITC_6.0/images/search_outline_new.svg" height="28" width="28" alt="search icon">
+</div>
+</div>
+</div>
+</div>
+</header>
+<style>
+    .citata1-favbet{
+        border-radius: 20px;
+        background: linear-gradient(270deg, #140474 1.3%, #FF267E 100%);
+        padding: 60px 250px;
+        margin: 40px 20px 40px;
+        color: #fff;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 150%;
+    }
+    .citata1-favbet:before{
+        content: url("https://itc.ua/wp-content/themes/ITC_6.0/images/double-quotes.svg");
+        display: block;
+        margin-bottom: 20px;
+    }
+    .citata1-favbet .author-block{
+        display: flex;
+    }
+    .citata1-favbet .author-left img{
+        width: 100px;
+        border-radius: 50%;
+        margin-right: 15px;
+        border: 10px solid rgba(255, 255, 255, 0.20);
+    }
+    .citata1-favbet .author-right p:first-child{
+        font-size: 18px;
+        font-weight: 700;
+        margin: 0 0 10px!important;
+        line-height: 1;
+    }
+    .citata1-favbet .author-right p:last-child{
+        font-size: 14px;
+        margin: 0!important;
+        line-height: 1;
+    }
+    @media (max-width: 768px) {
+        .citata1-favbet {
+            padding: 60px 20px!important;
+            margin: 0 0px 40px;
+            font-size: 24px;
+        }
+        .citata1-favbet .author-left img {
+            width: 100px!important;
+            height: 100px!important;
+        }
+    }
+</style>
+<div class="hide" id="breadcrumbs"><div class="breadcrumb"><nav aria-label="breadcrumbs" class="rank-math-breadcrumb"><p><a href="https://itc.ua">Головна</a><span class="separator"> - </span><a href="https://itc.ua/news/">Новости</a><span class="separator"> - </span><span class="last">Netflix готовится убрать самый дешевый тарифный план без рекламы</span></p></nav></div></div>
+<style>
+    .donat-img{
+        height: 42px!important;
+        position: absolute;
+        top: 7px;
+    }
+</style>
+<section id="wrapper">
+<div class="container">
+<div class="entry-header">
+<div class>
+<span class="cat part" style="vertical-align: middle;">
+<a href="https://itc.ua/news/" class="itc-cat news" rel="category">Новости</a>
+</span>
+<span class="category-color category-color-932038 " style="padding-right: 10px;">
+<a href="https://itc.ua/biznes/" style="font-weight:600;">IT-бизнес</a>
+</span>
+<span class="date part">
+24.01.2024 в 10:03 </span>
+<span class="comments part" style=" margin-top: 10px;">
+<a href="#itc-comments"><img src="https://itc.ua/wp-content/themes/ITC_6.0/images/comment_outline_24.svg" height="24" width="24" alt="comment">
+<span class="disqus-comment-count" data-disqus-url="https://itc.ua/ua/novini/netflix-zbyrayetsya-prybraty-najdeshevshyj-taryfnyj-plan-bez-reklamy-za-11-99/" data-disqus-identifier="2045967 https://itc.ua/?p=2045967"></span></a> </span>
+<span class="meta-eye view-stats js-view-stats d-none"><img src="https://itc.ua/wp-content/themes/ITC_6.0/images/eye2.png" height="11" width="17" alt="views icon"> <span class="view-stats__counter"></span></span>
+</div>
+<h1 class="h1 text-uppercase entry-title">
+Netflix готовится убрать самый дешевый тарифный план без рекламы </h1>
+<div class="author-block" style="display: flex;flex-wrap: wrap;"><div style="display: flex;align-items: center;"><div class="author-left " style="float: left">
+<a href="https://itc.ua/author/yura-oros/"><img src="https://itc.ua/wp-content/uploads/2023/07/2023-07-19-12.08.01-2-96x96.jpg" style="width: 60px;border-radius:50%;margin-right:15px;" width="60" height="60" alt="author avatar"></a><div style="display: none;">https://itc.ua/wp-content/uploads/2023/07/2023-07-19-12.08.01-2-96x96.jpg *** https://itc.ua/wp-content/uploads/2023/07/2023-07-19-12.08.01-2-96x96.jpg *** https://itc.ua/wp-content/uploads/2023/07/2023-07-19-12.08.01-2-96x96.jpg</div>
+</div>
+<div class="author-right" style="float: left;display: flex;align-items: flex-start;flex-direction: column;justify-content: center;">
+<p>
+<a href="https://itc.ua/author/yura-oros/" style="color: #109BFF;font-weight: 600;font-size: 16px;">Юрій Орос</a>
+</p><p style="color: #7E868B;font-size:14px;">Автор новостей</p></div></div></div> </div>
+<div class="row wide-flex">
+<main id="content" class="col-md-8 col-content">
+<article class="post">
+<div class="entry-content clearfix">
+<div class="post-txt" data-io-article-url="https://itc.ua/news/netflix-sobyraetsya-ubrat-samyj-deshevyj-taryfnyj-plan-bez-reklamy-za-11-99/">
+<p>
+<a href="https://itc.ua/wp-content/uploads/2024/01/j_wcxxvcx5l0eoyx8thhwfbn-6y.jpeg" rel="fancybox">
+<img src="https://itc.ua/wp-content/uploads/2024/01/j_wcxxvcx5l0eoyx8thhwfbn-6y.jpeg" data-srcset alt="Netflix готовится убрать самый дешевый тарифный план без рекламы" width="1200" height="750" class="img-responsive itc-post-thumb">
+</a>
+</p>
+<p>Netflix готовится полностью отменить самый дешевый безрекламный тарифный план Basic за $11,99 в месяц. Руководители компании сообщили об этом инвесторам в отчете о финансовых результатах. Это начнётся с Канады и Великобритании во втором квартале этого года.</p><div class="visible-sm visible-xs text-center clearfix" style="margin-bottom: 10px;">
+
+<div id="div-gpt-ad-itc.ua_mobile_content_middle_300x250" style="min-width: 300px; min-height: 250px;">
+<script>
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-itc.ua_mobile_content_middle_300x250'); });
+      </script>
+</div>
+</div>
+<div class="hidden-sm hidden-xs text-center clearfix" style="margin-bottom: 10px;">
+<div style="width: 50%;float:left;">
+
+<div id="div-gpt-ad-itc_content_premium1_300x250" style="min-width: 300px; min-height: 250px;">
+<script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-itc_content_premium1_300x250'); });
+  </script>
+</div>
+</div>
+<div style="width:50%;float:right;">
+
+<div id="div-gpt-ad-itc_content_medium2_300x250" style="min-width: 300px; min-height: 250px;">
+<script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-itc_content_medium2_300x250'); });
+  </script>
+</div>
+</div>
+</div>
+<style>
+                .about-noa a{
+                    display: block;
+                    width: 100%;
+                    background: url(https://itc.ua/wp-content/themes/ITC_6.0/images/banners/subtract.png) right bottom / contain no-repeat, #109BFF;
+                    font-size: 26px;
+                    color: #fff;
+                    padding: 10px 20px;
+                    font-weight: 700;
+                }
+                .about-noa a img{
+                    position: relative;
+                    width: 15px;
+                    margin-left: 20px;
+                    top: -2px;
+                }
+                .about-noa a:hover{color: #fff!important;}
+                @media (max-width: 768px){
+                    .about-noa a{
+                        font-size: 15px;
+                        background: #109BFF;
+                        font-weight: 400;
+                    }
+                    .about-noa a img{display: none;}
+                }
+            </style>
+<div class="mb-40 about-noa">
+<a href="https://itc.ua/ua/vidklyuchyty-reklamu/">
+Відключайте рекламу - підтримуйте ITC! <img decoding="async" src="https://itc.ua/wp-content/themes/ITC_6.0/images/banners/vector.svg">
+</a>
+</div>
+<p>Пользователям Netflix остается вариант за $15,49 в месяц без рекламы. В противном случае подписчикам придется платить $6,99 в месяц за базовый план с рекламом или $22,99 в месяц за премиум уровень, <a class="a-not-img" href="https://www.theverge.com/2024/1/23/24048107/netflix-basic-subscription-ads-earnings-q4-2023" target="_blank" rel="nofollow noopener">передает</a> The Verge. Отметим, что в Украине есть три варианта подписки:</p>
+<ul>
+<li>Базовый: 4,99 евро/месяц</li>
+<li>Стандартный: 7,49 евро/месяц</li>
+<li>Премиум: 9,99 евро/месяц</li>
+</ul>
+<p><a href="https://itc.ua/wp-content/uploads/2024/01/Znimok-ekrana-2024-01-24-o-09.50.41.png"><img fetchpriority="high" decoding="async" class="aligncenter size-full wp-image-2046114" src="https://itc.ua/wp-content/uploads/2024/01/Znimok-ekrana-2024-01-24-o-09.50.41.png" alt width="880" height="182" /></a></p>
+<blockquote><p>В 4-м квартале 23-го года, как и в предыдущем квартале, наше членство в рекламном сегменте увеличилось почти на 70% по сравнению с предыдущим кварталом благодаря улучшению наших предложений (например, загрузок) и постепенной отмене нашего Базового плана для новых членов и тех, кто присоединяется к нашим рекламным рынкам. На рекламный план приходится 40% всех регистраций Netflix на наших рекламных рынках, и мы планируем отказаться от Базового плана в некоторых из наших рекламных стран, начиная с Канады и Великобритании во втором квартале.</p></blockquote><div class="hidden-sm hidden-xs text-center clearfix" style="margin-bottom: 10px;">
+<div style="width: 50%;float:left;">
+
+<div id="div-gpt-ad-1679664464284-0" style="min-width: 300px; min-height: 250px;">
+<script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1679664464284-0'); });
+  </script>
+</div>
+</div>
+<div style="width:50%;float:right;">
+
+<div id="div-gpt-ad-1679664505442-0" style="min-width: 300px; min-height: 250px;">
+<script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1679664505442-0'); });
+  </script>
+</div>
+</div>
+</div>
+<div class="visible-sm visible-xs text-center clearfix" style="margin-bottom: 10px;">
+
+<div id="div-gpt-ad-itc.ua_mobile_content_premium_300x250" style="min-width: 300px; min-height: 250px;">
+<script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-itc.ua_mobile_content_premium_300x250'); });
+  </script>
+</div>
+</div>
+<p>В видеоинтервью для инвесторов сопредседатель правления Грег Питерс сказал, что количество активных пользователей поддерживаемого рекламой сервиса сейчас составляет 23 миллиона ежемесячно, и что приоритетом для Netflix является «масштабирование». Он сказал, что это включает в себя повышение привлекательности сервиса с помощью обновлений, таких как прошлогодние изменения в самой дешевой версии, которые повысили разрешение до 1080p, добавили несколько потоков и включили загрузку, а также то, как Netflix «изменяет планы и ценовую структуру в других местах».</p>
+<p>Netflix также объявил, что прибавил 13,1 миллиона подписчиков за последний квартал 2023 года, доведя их общее количество до 247 миллионов во всем мире.</p>
+</div>
+</div>
+<footer class="entry-footer clearfix">
+<div class="post-shares-wrap visible-md visible-lg">
+</div>
+<div class="tags-new">
+<div class="entry-tags clearfix">
+<a href="https://itc.ua/tag/netflix/" rel="tag">Netflix</a><span style="color: #eff2f400!important;font-size: 1px;">, </span><a href="https://itc.ua/tag/tarifi/" rel="tag">тарифи</a> </div>
+</div>
+</footer>
+</article>
+ <div id="M914468ScriptRootC1537292" style="margin: 30px 0;"></div> <script src="https://jsc.idealmedia.io/i/t/itc.ua.1537292.js" async></script> 
+<div id="itc-comments">
+<style>
+        #reactions-promotion {
+            border: 1px solid #dbdfe4;
+            border-radius: 4px;
+            padding-bottom: 16px
+        }
+
+        #reactions-promotion .striped-bar {
+            background: url(https://c.disquscdn.com/next/embed/assets/img/striped-bar.6bfe0ab06ab0fd0e71c7b81f1dfb78cf.svg) top repeat-x;
+            background-size: auto 15px;
+            width: 100%;
+            height: 15px;
+            margin-bottom: 5px
+        }
+
+        #reactions-promotion .private {
+            color: #687a86;
+            font-size: 13px;
+            font-weight: 500
+        }
+
+        #reactions-promotion .private .icon-lock {
+            margin-right: 6px
+        }
+
+        #reactions-promotion .promotion-title {
+            text-align: center;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto
+        }
+
+        #reactions-promotion .btn-primary {
+            background-color: #2e9fff
+        }
+
+        .no-touch #reactions-promotion .btn-primary:hover,.no-touchevents #reactions-promotion .btn-primary:hover {
+            background-color: #164b78;
+            border-color: #164b78;
+            color: #fff
+        }
+
+        .dark #reactions-promotion {
+            border-color: #6c6f73
+        }
+
+        .dark #reactions-promotion .striped-bar {
+            filter: brightness(.5)
+        }
+
+        .dark #reactions-promotion .private {
+            color: rgba(255,255,255,.7)
+        }
+
+        .dark #reactions-promotion .btn-info {
+            background-color: #6c6f73
+        }
+
+        .dark #reactions-promotion .btn-info:not(:disabled):hover {
+            background: #535659
+        }
+
+        #reactions,#reactions-promotion {
+            margin-bottom: 10px
+        }
+
+        #reactions-promotion.reactions-refresh,#reactions.reactions-refresh {
+            margin-bottom: 24px
+        }
+
+        #reactions .err,#reactions-promotion .err {
+            text-align: center;
+            color: #f05f70
+        }
+
+        .embed-refresh-v2 #reactions .prompt,.embed-refresh-v2 #reactions-promotion .prompt {
+            font-size: 20px
+        }
+
+        #reactions .reaction-items.is-submitting,#reactions-promotion .reaction-items.is-submitting {
+            position: relative
+        }
+
+        #reactions .reaction-items.is-submitting .reaction-item,#reactions-promotion .reaction-items.is-submitting .reaction-item {
+            opacity: .7
+        }
+
+        #reactions .reaction-items:not(.is-submitting):not(.readonly) .reaction-item:not(.reaction-item__disabled):hover .reaction-item__button,#reactions-promotion .reaction-items:not(.is-submitting):not(.readonly) .reaction-item:not(.reaction-item__disabled):hover .reaction-item__button {
+            cursor: pointer
+        }
+
+        #reactions .reaction-items:not(.is-submitting):not(.readonly) .reaction-item:not(.reaction-item__disabled):hover .reaction-item__button--refresh,#reactions-promotion .reaction-items:not(.is-submitting):not(.readonly) .reaction-item:not(.reaction-item__disabled):hover .reaction-item__button--refresh {
+            background-color: var(--publisher-color-safe,#2e9fff);
+            color: #fff
+        }
+
+        .embed-refresh-v2 #reactions .reaction-items:not(.is-submitting):not(.readonly) .reaction-item:not(.reaction-item__disabled):hover .reaction-item__button--refresh,.embed-refresh-v2 #reactions-promotion .reaction-items:not(.is-submitting):not(.readonly) .reaction-item:not(.reaction-item__disabled):hover .reaction-item__button--refresh {
+            background-color: transparent;
+            color: var(--publisher-color-safe,#2e9fff)
+        }
+
+        #reactions .reaction-items:not(.is-submitting):not(.readonly) .reaction-item:not(.reaction-item__disabled):hover .reaction-tooltip,#reactions-promotion .reaction-items:not(.is-submitting):not(.readonly) .reaction-item:not(.reaction-item__disabled):hover .reaction-tooltip {
+            display: block
+        }
+
+        #reactions .reaction-items:not(.is-submitting):not(.readonly) .reaction-item__enabled .reaction-item__button:active .reaction-item__image,#reactions .reaction-items:not(.is-submitting):not(.readonly) .reaction-item__enabled .reaction-item__button:focus .reaction-item__image,#reactions .reaction-items:not(.is-submitting):not(.readonly) .reaction-item__enabled .reaction-item__button:hover .reaction-item__image,#reactions-promotion .reaction-items:not(.is-submitting):not(.readonly) .reaction-item__enabled .reaction-item__button:active .reaction-item__image,#reactions-promotion .reaction-items:not(.is-submitting):not(.readonly) .reaction-item__enabled .reaction-item__button:focus .reaction-item__image,#reactions-promotion .reaction-items:not(.is-submitting):not(.readonly) .reaction-item__enabled .reaction-item__button:hover .reaction-item__image {
+            transform: scale(1.15);
+            transition: transform 250ms ease-in-out
+        }
+
+        .embed-refresh-v2 #reactions .reaction-items:not(.is-submitting):not(.readonly) .reaction-item__enabled .reaction-item__button:active .reaction-item__image,.embed-refresh-v2 #reactions .reaction-items:not(.is-submitting):not(.readonly) .reaction-item__enabled .reaction-item__button:focus .reaction-item__image,.embed-refresh-v2 #reactions .reaction-items:not(.is-submitting):not(.readonly) .reaction-item__enabled .reaction-item__button:hover .reaction-item__image,.embed-refresh-v2 #reactions-promotion .reaction-items:not(.is-submitting):not(.readonly) .reaction-item__enabled .reaction-item__button:active .reaction-item__image,.embed-refresh-v2 #reactions-promotion .reaction-items:not(.is-submitting):not(.readonly) .reaction-item__enabled .reaction-item__button:focus .reaction-item__image,.embed-refresh-v2 #reactions-promotion .reaction-items:not(.is-submitting):not(.readonly) .reaction-item__enabled .reaction-item__button:hover .reaction-item__image {
+            transform: none;
+            transition: none
+        }
+
+        #reactions .reaction-items .reaction-items__container,#reactions-promotion .reaction-items .reaction-items__container {
+            margin: 0 auto;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-direction: row;
+            flex-direction: row;
+            -ms-flex-align: center;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        #reactions .reaction-items .reaction-items__container--refresh,#reactions-promotion .reaction-items .reaction-items__container--refresh {
+            gap: 24px
+        }
+
+        .embed-refresh-v2 #reactions .reaction-items .reaction-items__container--refresh,.embed-refresh-v2 #reactions-promotion .reaction-items .reaction-items__container--refresh {
+            gap: 0;
+            -ms-flex-align: start;
+            align-items: flex-start
+        }
+
+        #reactions .reaction-items.has-selection .reaction-item,#reactions-promotion .reaction-items.has-selection .reaction-item {
+            opacity: .65;
+            transition: opacity 250ms ease-in-out .2s
+        }
+
+        @media only screen and (min-width: 300px) and (max-width:480px) {
+            #reactions .reaction-items.has-selection .reaction-item,#reactions-promotion .reaction-items.has-selection .reaction-item {
+                width:100px
+            }
+        }
+
+        #reactions .reaction-items.has-selection .reaction-item.reaction-item__selected,#reactions-promotion .reaction-items.has-selection .reaction-item.reaction-item__selected {
+            opacity: 1
+        }
+
+        #reactions .reaction-items.has-selection .reaction-item.reaction-item__selected .reaction-item__image--refresh.reaction-item__image--refresh,#reactions-promotion .reaction-items.has-selection .reaction-item.reaction-item__selected .reaction-item__image--refresh.reaction-item__image--refresh {
+            transform: scale(1.15)
+        }
+
+        .embed-refresh-v2 #reactions .reaction-items.has-selection .reaction-item.reaction-item__selected .reaction-item__image--refresh.reaction-item__image--refresh,.embed-refresh-v2 #reactions-promotion .reaction-items.has-selection .reaction-item.reaction-item__selected .reaction-item__image--refresh.reaction-item__image--refresh {
+            transform: none
+        }
+
+        .dark #reactions .reaction-items.has-selection .reaction-item,.dark #reactions-promotion .reaction-items.has-selection .reaction-item {
+            opacity: .5
+        }
+
+        .dark #reactions .reaction-items.has-selection .reaction-item--refresh,.dark #reactions-promotion .reaction-items.has-selection .reaction-item--refresh {
+            opacity: 1
+        }
+
+        .dark #reactions .reaction-items.has-selection .reaction-item.reaction-item__selected,.dark #reactions-promotion .reaction-items.has-selection .reaction-item.reaction-item__selected {
+            opacity: 1
+        }
+
+        #reactions .reaction-items.has-selection .reaction-item--refresh,#reactions-promotion .reaction-items.has-selection .reaction-item--refresh {
+            opacity: 1
+        }
+
+        #reactions .reaction-items.counts-visible .reaction-item .reaction-item__button .reaction-item__image-wrapper .reaction-item__votes-wrapper,#reactions-promotion .reaction-items.counts-visible .reaction-item .reaction-item__button .reaction-item__image-wrapper .reaction-item__votes-wrapper {
+            animation: vote-expand 350ms forwards
+        }
+
+        #reactions .reaction-items .reaction-item--refresh,#reactions-promotion .reaction-items .reaction-item--refresh {
+            position: relative
+        }
+
+        #reactions .reaction-items .reaction-item .reaction-item__button,#reactions-promotion .reaction-items .reaction-item .reaction-item__button {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -ms-flex-align: center;
+            align-items: center;
+            position: relative;
+            font-size: 14px;
+            padding: 5px;
+            margin: 0 8px 10px;
+            border-radius: 6px;
+            white-space: nowrap
+        }
+
+        @media only screen and (min-width: 300px) and (max-width:480px) {
+            #reactions .reaction-items .reaction-item .reaction-item__button,#reactions-promotion .reaction-items .reaction-item .reaction-item__button {
+                white-space:normal;
+                font-size: 12px
+            }
+        }
+
+        #reactions .reaction-items .reaction-item .reaction-item__button--refresh,#reactions-promotion .reaction-items .reaction-item .reaction-item__button--refresh {
+            background-color: #f9f9f9;
+
+            padding: 4px 12px;
+            margin: 0;
+            border-radius: 20px
+        }
+
+        .embed-refresh-v2 #reactions .reaction-items .reaction-item .reaction-item__button--refresh,.embed-refresh-v2 #reactions-promotion .reaction-items .reaction-item .reaction-item__button--refresh {
+            background-color: transparent;
+            padding: 8px 10px 7px 10px
+        }
+
+        .embed-refresh-v2 #reactions .reaction-items .reaction-item .reaction-item__button--refresh .reaction-vote,.embed-refresh-v2 #reactions-promotion .reaction-items .reaction-item .reaction-item__button--refresh .reaction-vote {
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 27px;
+            letter-spacing: .02em
+        }
+
+        .embed-refresh-v2 #reactions .reaction-items .reaction-item .reaction-item__button--refresh .reaction-item__text,.embed-refresh-v2 #reactions-promotion .reaction-items .reaction-item .reaction-item__button--refresh .reaction-item__text {
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 16px;
+            letter-spacing: .02em;
+            height: -webkit-fit-content;
+            height: fit-content;
+            overflow-wrap: anywhere;
+            white-space: break-spaces;
+            max-width: 80px
+        }
+
+        .embed-refresh-v2.mobile #reactions .reaction-items .reaction-item .reaction-item__button--refresh,.embed-refresh-v2.mobile #reactions-promotion .reaction-items .reaction-item .reaction-item__button--refresh {
+            padding: 2px
+        }
+
+        .dark #reactions .reaction-items .reaction-item .reaction-item__button--refresh,.dark #reactions-promotion .reaction-items .reaction-item .reaction-item__button--refresh {
+            background-color: rgba(255,255,255,.2);
+            color: rgba(255,255,255,.85)
+        }
+
+        .embed-refresh-v2 .dark #reactions .reaction-items .reaction-item .reaction-item__button--refresh,.embed-refresh-v2 .dark #reactions-promotion .reaction-items .reaction-item .reaction-item__button--refresh {
+            background-color: transparent
+        }
+
+        #reactions .reaction-items .reaction-item .reaction-item__button .reaction-item__text,#reactions-promotion .reaction-items .reaction-item .reaction-item__button .reaction-item__text {
+            text-align: center
+        }
+
+        #reactions .reaction-items .reaction-item .reaction-item__button .reaction-item__text--refresh,#reactions-promotion .reaction-items .reaction-item .reaction-item__button .reaction-item__text--refresh {
+            -ms-flex-item-align: start;
+            align-self: flex-start;
+            margin-left: 5px;
+            font-size: 16px;
+            text-align: start
+        }
+
+        #reactions .reaction-items .reaction-item .reaction-item__button .reaction-item__image-wrapper,#reactions-promotion .reaction-items .reaction-item .reaction-item__button .reaction-item__image-wrapper {
+            position: relative
+        }
+
+        #reactions .reaction-items .reaction-item .reaction-item__button .reaction-item__image-wrapper--refresh,#reactions-promotion .reaction-items .reaction-item .reaction-item__button .reaction-item__image-wrapper--refresh {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-align: center;
+            align-items: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            min-width: 75.78px
+        }
+
+        #reactions .reaction-items .reaction-item .reaction-item__button .reaction-item__image-wrapper .reaction-item__image,#reactions-promotion .reaction-items .reaction-item .reaction-item__button .reaction-item__image-wrapper .reaction-item__image {
+            position: relative;
+            width: 42px;
+            height: 42px;
+            object-fit: cover;
+            margin-bottom: 6px;
+            transform: scale(1);
+            transition: transform 250ms ease-in-out
+        }
+
+        #reactions .reaction-items .reaction-item .reaction-item__button .reaction-item__image-wrapper .reaction-item__image--refresh,#reactions-promotion .reaction-items .reaction-item .reaction-item__button .reaction-item__image-wrapper .reaction-item__image--refresh {
+            margin: 0
+        }
+
+        #reactions .reaction-items .reaction-item .reaction-item__button .reaction-item__image-wrapper .reaction-item__votes-wrapper,#reactions-promotion .reaction-items .reaction-item .reaction-item__button .reaction-item__image-wrapper .reaction-item__votes-wrapper {
+            position: absolute;
+            background: var(--publisher-color-safe,#2e9fff);
+            min-width: 18px;
+            height: 18px;
+            border-radius: 18px;
+            top: -4px;
+            right: -5px;
+            transform: scale(0)
+        }
+
+        #reactions .reaction-items .reaction-item .reaction-item__button .reaction-item__image-wrapper .reaction-item__votes-wrapper--refresh,#reactions-promotion .reaction-items .reaction-item .reaction-item__button .reaction-item__image-wrapper .reaction-item__votes-wrapper--refresh {
+            position: relative;
+            background: 0 0;
+            height: auto;
+            top: 0;
+            right: 0;
+            min-width: auto;
+            margin-left: 16px
+        }
+
+        #reactions .reaction-items .reaction-item .reaction-item__button .reaction-item__image-wrapper .reaction-item__votes-wrapper--refresh .reaction-item__votes--refresh.reaction-item__votes--refresh.reaction-item__votes--refresh,#reactions-promotion .reaction-items .reaction-item .reaction-item__button .reaction-item__image-wrapper .reaction-item__votes-wrapper--refresh .reaction-item__votes--refresh.reaction-item__votes--refresh.reaction-item__votes--refresh {
+            color: inherit
+        }
+
+        #reactions .reaction-items .reaction-item .reaction-item__button .reaction-item__image-wrapper .reaction-item__votes-wrapper .reaction-item__votes,#reactions-promotion .reaction-items .reaction-item .reaction-item__button .reaction-item__image-wrapper .reaction-item__votes-wrapper .reaction-item__votes {
+            color: #fff;
+            font-weight: 700;
+            text-align: center;
+            line-height: 18px;
+            padding: 0 2px
+        }
+
+        #reactions .reaction-items .reaction-item .reaction-item__button .reaction-item__image-wrapper .reaction-item__votes-wrapper .reaction-item__votes--refresh,#reactions-promotion .reaction-items .reaction-item .reaction-item__button .reaction-item__image-wrapper .reaction-item__votes-wrapper .reaction-item__votes--refresh {
+            font-size: 24px
+        }
+
+        @media only screen and (min-width: 300px) and (max-width:480px) {
+            #reactions .reaction-items .reaction-item .reaction-item__button,#reactions-promotion .reaction-items .reaction-item .reaction-item__button {
+                margin:0 6px 8px
+            }
+
+            #reactions .reaction-items .reaction-item .reaction-item__button .reaction-item__image-wrapper .reaction-item__image,#reactions-promotion .reaction-items .reaction-item .reaction-item__button .reaction-item__image-wrapper .reaction-item__image {
+                width: 38px;
+                height: 38px;
+                margin-bottom: 3px
+            }
+
+            #reactions .reaction-items .reaction-item .reaction-item__button .reaction-item__text,#reactions-promotion .reaction-items .reaction-item .reaction-item__button .reaction-item__text {
+                width: 90px;
+                word-break: break-all
+            }
+
+            #reactions .reaction-items .reaction-item .reaction-item__button .reaction-item__text--refresh,#reactions-promotion .reaction-items .reaction-item .reaction-item__button .reaction-item__text--refresh {
+                width: 100%
+            }
+
+            #reactions .reaction-items .reaction-item .reaction-item__button--refresh,#reactions-promotion .reaction-items .reaction-item .reaction-item__button--refresh {
+                margin: 0
+            }
+        }
+
+        #reactions .reaction-items .reaction-item.reaction-item__selected,#reactions-promotion .reaction-items .reaction-item.reaction-item__selected {
+            color: var(--publisher-color-safe,#2e9fff)
+        }
+
+        .embed-refresh-v2 #reactions .reaction-items .reaction-item.reaction-item__selected,.embed-refresh-v2 #reactions-promotion .reaction-items .reaction-item.reaction-item__selected {
+            border: 1px solid var(--publisher-color-safe,#2e9fff);
+            border-radius: 6px
+        }
+
+        #reactions .reaction-items .reaction-item.reaction-item__selected.reaction-item--refresh,#reactions-promotion .reaction-items .reaction-item.reaction-item__selected.reaction-item--refresh {
+            color: #fff
+        }
+
+        #reactions .reaction-items .reaction-item.reaction-item__selected .reaction-item__text,#reactions-promotion .reaction-items .reaction-item.reaction-item__selected .reaction-item__text {
+            color: var(--publisher-color-safe,#2e9fff);
+            font-weight: 700
+        }
+
+        #reactions .reaction-items .reaction-item.reaction-item__selected .reaction-item__text--refresh,#reactions-promotion .reaction-items .reaction-item.reaction-item__selected .reaction-item__text--refresh {
+            color: #fff
+        }
+
+        #reactions .reaction-items .reaction-item.reaction-item__selected .reaction-item__button--refresh,#reactions-promotion .reaction-items .reaction-item.reaction-item__selected .reaction-item__button--refresh {
+            background-color: var(--publisher-color-safe,#2e9fff);
+            color: #fff
+        }
+
+        .embed-refresh-v2 #reactions .reaction-items .reaction-item.reaction-item__selected .reaction-item__button--refresh,.embed-refresh-v2 #reactions-promotion .reaction-items .reaction-item.reaction-item__selected .reaction-item__button--refresh {
+            background-color: transparent
+        }
+
+        #reactions .reaction-items .reaction-item.reaction-item__selected .reaction-item__votes--refresh,#reactions-promotion .reaction-items .reaction-item.reaction-item__selected .reaction-item__votes--refresh {
+            color: #fff
+        }
+
+        .embed-refresh-v2 #reactions .reaction-items .reaction-item.reaction-item__selected .reaction-item__votes--refresh,.embed-refresh-v2 #reactions-promotion .reaction-items .reaction-item.reaction-item__selected .reaction-item__votes--refresh {
+            color: var(--publisher-color-safe,#2e9fff)
+        }
+
+        .dark #reactions .reaction-items .reaction-item.reaction-item__selected,.dark #reactions-promotion .reaction-items .reaction-item.reaction-item__selected {
+            color: #fff
+        }
+
+        #reactions .reaction-items .reaction-item.reaction-item__selected .reaction-item__votes:after,#reactions-promotion .reaction-items .reaction-item.reaction-item__selected .reaction-item__votes:after {
+            animation: anim-heart 350ms forwards
+        }
+
+        #reactions .reaction-items .reaction-item .reaction-item__votes,#reactions-promotion .reaction-items .reaction-item .reaction-item__votes {
+            position: relative;
+            transition: all .2s ease-in-out
+        }
+
+        #reactions .reaction-items .reaction-item .reaction-item__votes:after,#reactions-promotion .reaction-items .reaction-item .reaction-item__votes:after {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin: -25px 0 0 -25px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            content: '';
+            opacity: 0;
+            background: var(--publisher-color-safe,#2e9fff)
+        }
+
+        #reactions .reaction-items .reaction-item .reaction-item__votes--refresh,#reactions-promotion .reaction-items .reaction-item .reaction-item__votes--refresh {
+            transition: none
+        }
+
+        #reactions .reaction-items .reaction-item .reaction-item__votes--refresh:after,#reactions-promotion .reaction-items .reaction-item .reaction-item__votes--refresh:after {
+            content: none
+        }
+
+        #reactions .reaction-items .reaction-item .reaction-tooltip,#reactions-promotion .reaction-items .reaction-item .reaction-tooltip {
+            top: -52px;
+            padding: 8px;
+            display: none;
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            background-color: #fff;
+            border-radius: 20px;
+            border: 1px solid #e8e9ef
+        }
+
+        #reactions .reaction-items .reaction-item .reaction-tooltip__text,#reactions-promotion .reaction-items .reaction-item .reaction-tooltip__text {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 16px;
+
+            display: block;
+            word-break: break-word
+        }
+
+        #reactions .reaction-items .reaction-item .reaction-tooltip__triangle,#reactions-promotion .reaction-items .reaction-item .reaction-tooltip__triangle {
+            bottom: -12px;
+            left: 16px;
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 11px solid transparent;
+            border-right: 11px solid transparent;
+            border-top: 12px solid #e8e9ef
+        }
+
+        #reactions .reaction-items .reaction-item .reaction-tooltip__inner-triangle,#reactions-promotion .reaction-items .reaction-item .reaction-tooltip__inner-triangle {
+            position: relative;
+            top: -12px;
+            left: -10px;
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid #fff
+        }
+    </style>
+<div id="reactions__container" class="embed-refresh-v2" data-post-id="2046128">
+<div>
+<div id="reactions" class="reactions-refresh">
+<div class="text-bold align text-center spacing-bottom-small prompt">Що думаєте про цю статтю?</div>
+<div class="align text-center spacing-bottom">
+Голосів: </div>
+<div class="reaction-items">
+<div class="align align--center align--wrap reaction-items__container reaction-items__container--refresh">
+<div class="reaction-item reaction-item--refresh reaction-item__enabled">
+<div class="reaction-item__button reaction-item__button--refresh" tabindex="0">
+<div class="reaction-item__image-wrapper reaction-item__image-wrapper--refresh">
+<img class="reaction-item__image reaction-item__image--refresh" src="/wp-content/themes/ITC_6.0/blogs/images/reactions/1.png" alt="Файно є" data-number="1">
+</div>
+<div class="reaction-item__text">Файно є</div>
+</div>
+</div>
+<div class="reaction-item reaction-item--refresh reaction-item__enabled">
+<div class="reaction-item__button reaction-item__button--refresh" tabindex="0">
+<div class="reaction-item__image-wrapper reaction-item__image-wrapper--refresh">
+<img class="reaction-item__image reaction-item__image--refresh" src="/wp-content/themes/ITC_6.0/blogs/images/reactions/2.png" alt="Йой, най буде!" data-number="2">
+</div>
+<div class="reaction-item__text">Йой, най буде!</div>
+</div>
+</div>
+<div class="reaction-item reaction-item--refresh reaction-item__enabled">
+<div class="reaction-item__button reaction-item__button--refresh" tabindex="0">
+<div class="reaction-item__image-wrapper reaction-item__image-wrapper--refresh">
+<img class="reaction-item__image reaction-item__image--refresh" src="/wp-content/themes/ITC_6.0/blogs/images/reactions/3.png" alt="Трясця!" data-number="3">
+</div>
+<div class="reaction-item__text">Трясця!</div>
+</div>
+</div>
+<div class="reaction-item reaction-item--refresh reaction-item__enabled">
+<div class="reaction-item__button reaction-item__button--refresh" tabindex="0">
+<div class="reaction-item__image-wrapper reaction-item__image-wrapper--refresh">
+<img class="reaction-item__image reaction-item__image--refresh" src="/wp-content/themes/ITC_6.0/blogs/images/reactions/4.png" alt="Ну такої..." data-number="4">
+</div>
+<div class="reaction-item__text">Ну такої...</div>
+</div>
+</div>
+<div class="reaction-item reaction-item--refresh reaction-item__enabled">
+<div class="reaction-item__button reaction-item__button--refresh" tabindex="0">
+<div class="reaction-item__image-wrapper reaction-item__image-wrapper--refresh">
+<img class="reaction-item__image reaction-item__image--refresh" src="/wp-content/themes/ITC_6.0/blogs/images/reactions/5.png" alt="Бісить, аж тіпає!" data-number="5">
+</div>
+<div class="reaction-item__text">Бісить, аж тіпає!</div>
+</div>
+</div>
+</div>
+</div>
+<div class="err text-semibold"></div>
+</div>
+</div>
+</div>
+<script>
+        jQuery(document).ready(function($) {
+            var postID = $('#reactions__container').data('post-id');
+            var ajaxUrl = 'https://itc.ua/ua/blogs-itc/voiting/';  // Устанавливаем кастомный AJAX URL
+            var votedReaction = $.cookie('voted_' + postID);
+            // Если уже голосовали, сразу запрашиваем результаты
+           loadVoteResults(postID);
+
+            // Обработка клика по голосованию
+            $(document).on('click', '.reaction-item__button', function () {
+                votedReaction = $.cookie('voted_' + postID);
+                var reaction = $(this).find('img').data('number');  // Получаем реакцию
+                if (votedReaction == reaction) {
+                    // Если пользователь голосует повторно за тот же вариант, удаляем голос
+                    $.ajax({
+                        url: ajaxUrl,
+                        type: 'POST',
+                        data: {
+                            action: 'remove_vote',
+                            post_id: postID,
+                            reaction: reaction
+                        },
+                        success: function (response) {
+                            if (response.success) {
+                                // Удаляем данные о голосе из cookies
+                                //setCookie('voted_' + postID, "", -1);
+
+                                // Обновляем интерфейс с результатами голосования через AJAX
+                                $('#reactions__container').html(response.data.html);
+                            } else {
+                                alert('Помилка відміни голосу');
+                            }
+                        }
+                    });
+                } else {
+                    // Если голосует за другой вариант, обновляем голос
+                    $.ajax({
+                        url: ajaxUrl,
+                        type: 'POST',
+                        data: {
+                            action: 'submit_vote',
+                            post_id: postID,
+                            reaction: reaction
+                        },
+                        success: function (response) {
+                            if (response.success) {
+                                // Сохраняем новый выбор в cookies
+                                //setCookie('voted_' + postID, reaction, 365);
+
+                                // Обновляем интерфейс с результатами голосования через AJAX
+                                $('#reactions__container').html(response.data.html);
+                            } else {
+                                alert('Помилка голосування');
+                            }
+                        }
+                    });
+                }
+            });
+
+            // Функция для загрузки результатов голосования
+            function loadVoteResults(postID) {
+                $.ajax({
+                    url: ajaxUrl,
+                    type: 'POST',
+                    data: {
+                        action: 'get_vote_results',
+                        post_id: postID
+                    },
+                    success: function (response) {
+                        if (response.success) {
+                            $('#reactions__container').html(response.data.html);
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+<div id="disqus_thread" style="min-height: 100px;" data-post-id="2045967">Loading comments...</div>
+<script>
+    var disqus_config = function () {
+        this.page.url = "https://itc.ua/ua/novini/netflix-zbyrayetsya-prybraty-najdeshevshyj-taryfnyj-plan-bez-reklamy-za-11-99/";
+        this.page.identifier = "2045967 https://itc.ua/?p=2045967";
+        this.page.title = "Netflix збирається прибрати найдешевший тарифний план без реклами";
+        this.language = "ru";
+    };
+    </script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        let disqusThread = document.querySelector("#disqus_thread");
+
+        if ("IntersectionObserver" in window) {
+            if (disqusThread != null) {
+                new IntersectionObserver((entries, observe) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            let d = document, s = d.createElement('script');
+                            s.src = '//itcua.disqus.com/embed.js';
+                            s.async = true;
+                            s.setAttribute('data-timestamp', +new Date());
+                            (d.head || d.body).appendChild(s);
+                            observe.unobserve(entry.target);
+                        }
+                    });
+                }).observe(disqusThread);
+            }
+        } else {
+            // Possibly fall back to a more compatible method here
+            console.log("Browser Not supported, please upgrade!");
+        }
+    });
+    </script>
+</div>
+<div class="hidden-sm hidden-xs text-center clearfix" style="margin-bottom: 10px;">
+<div style="width: 50%;float:left;">
+
+<div id="div-gpt-ad-1698315681765-0" style="min-width: 300px; min-height: 250px;">
+<script>
+                                    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1698315681765-0'); });
+                                </script>
+</div>
+</div>
+<div style="width:50%;float:right;">
+
+<div id="div-gpt-ad-1698315753062-0" style="min-width: 300px; min-height: 250px;">
+<script>
+                                    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1698315753062-0'); });
+                                </script>
+</div>
+</div>
+</div>
+<div class="visible-xs text-center clearfix">
+
+<div id="div-gpt-ad-1658475482813-0-2" style="min-width: 300px; min-height: 250px;">
+<script>
+                                googletag.cmd.push(function() { googletag.display('div-gpt-ad-1658475482813-0'); });
+                            </script>
+</div>
+<br>
+</div>
+</main>
+<aside id="sidebar" class="col-sm-4 hidden-sm hidden-xs col-sidebar">
+<ul class="xoxo">
+<li id="execphp-15" class="block widget-container widget_execphp"> <div class="execphpwidget"> 
+<div id="div-gpt-ad-itc_rightbar_premium_300x600" style="min-width: 300px; min-height: 600px;">
+<script>
+				googletag.cmd.push(function() { googletag.display('div-gpt-ad-itc_rightbar_premium_300x600'); });
+			  </script>
+</div>
+
+<div id="div-gpt-ad-1707462095328-0" style="min-width: 300px; min-height: 600px;">
+<script>
+				googletag.cmd.push(function() { googletag.display('div-gpt-ad-1707462095328-0'); });
+			  </script>
+</div>
+</div>
+</li><li id="commented-posts-10" class="block widget-container commented-posts-widget"><h3 class="widget-title">Самое обсуждаемое</h3> <div class="post post-1 2661427" 2661427>
+<div class="row">
+<div class="col-xs-4 col-img">
+<div class="comment-blue" style="background: #109BFF;">
+<span class="icon icon-ic-comment-black-48px"></span>
+<span class="disqus-comment-count" data-disqus-url="https://itc.ua/ua/novini/ajtivtsyam-hochut-zaboronyty-vykorystovuvaty-fop-ta-sproshhenu-systemu-opodatkuvannya/">
+</span>
+</div>
+<a href="https://itc.ua/news/ajtyshnykam-hotyat-zapretyt-yspolzovat-fop-y-uproshhennuyu-systemu-nalogooblozhenyya/" class="thumb-responsive" data-bg="https://itc.ua/wp-content/uploads/2024/10/Depositphotos_110828346_L-450x300.jpg"></a>
+</div>
+<div class="col-xs-8 col-txt">
+<a class="entry-title" href="https://itc.ua/news/ajtyshnykam-hotyat-zapretyt-yspolzovat-fop-y-uproshhennuyu-systemu-nalogooblozhenyya/">Айтишникам хотят запретить использовать ФОП и упрощенную систему налогообложения</a>
+<span class="comments part">
+</span>
+</div>
+</div>
+</div>
+<div class="post post-2 2656863" 0>
+<div class="row">
+<div class="col-xs-4 col-img">
+<div class="comment-blue" style="background: #109BFF;">
+<span class="icon icon-ic-comment-black-48px"></span>
+<span class="disqus-comment-count" data-disqus-url="https://itc.ua/ua/blogs/chy-varto-chytaty-klasyku-naukovoyi-fantastyky-ekspres-oglyad/">
+</span>
+</div>
+<a href="https://itc.ua/ua/blogs/chy-varto-chytaty-klasyku-naukovoyi-fantastyky-ekspres-oglyad/" class="thumb-responsive" data-bg="https://itc.ua/wp-content/uploads/2024/10/sci-fi-8281527_1280-450x253.jpg"></a>
+</div>
+<div class="col-xs-8 col-txt">
+<a class="entry-title" href="https://itc.ua/ua/blogs/chy-varto-chytaty-klasyku-naukovoyi-fantastyky-ekspres-oglyad/">Найкраще з класики наукової фантастики. Що варто почитати?</a>
+<span class="comments part">
+</span>
+</div>
+</div>
+</div>
+<div class="post post-3 2653216" 0>
+<div class="row">
+<div class="col-xs-4 col-img">
+<div class="comment-blue" style="background: #109BFF;">
+<span class="icon icon-ic-comment-black-48px"></span>
+<span class="disqus-comment-count" data-disqus-url="https://itc.ua/ua/blogs/pk-misyatsya-b-u-edition-badoryj-gejming-za-10-500-gryven/">
+</span>
+</div>
+<a href="https://itc.ua/ua/blogs/pk-misyatsya-b-u-edition-badoryj-gejming-za-10-500-gryven/" class="thumb-responsive" data-bg="https://itc.ua/wp-content/uploads/2024/10/2024-10-02_21-33-18_56382-450x253.png"></a>
+</div>
+<div class="col-xs-8 col-txt">
+<a class="entry-title" href="https://itc.ua/ua/blogs/pk-misyatsya-b-u-edition-badoryj-gejming-za-10-500-gryven/">Народний ПК місяця «Б/У Edition»: бадьорий геймінг за 10 400 гривень</a>
+<span class="comments part">
+</span>
+</div>
+</div>
+</div>
+<div class="post post-4 2662757" 2662757>
+<div class="row">
+<div class="col-xs-4 col-img">
+<div class="comment-blue" style="background: #109BFF;">
+<span class="icon icon-ic-comment-black-48px"></span>
+<span class="disqus-comment-count" data-disqus-url="https://itc.ua/ua/novini/popyt-na-vzhyvani-avto-z-za-kordonu-yaki-modeli-obyrayut-ukrayintsi/">
+</span>
+</div>
+<a href="https://itc.ua/news/spros-na-poderzhannye-avto-yz-za-rubezha-kakye-modely-vybyrayut-ukrayntsy/" class="thumb-responsive" data-bg="https://itc.ua/wp-content/uploads/2024/10/VW_Golf_1.6_TDI_BlueMotion_Technology_Comfortline-450x227.jpg"></a>
+</div>
+<div class="col-xs-8 col-txt">
+<a class="entry-title" href="https://itc.ua/news/spros-na-poderzhannye-avto-yz-za-rubezha-kakye-modely-vybyrayut-ukrayntsy/">Спрос на подержанные авто из-за рубежа: какие модели выбирают украинцы?</a>
+<span class="comments part">
+</span>
+</div>
+</div>
+</div>
+<div class="post post-5 2657269" 2657269>
+<div class="row">
+<div class="col-xs-4 col-img">
+<div class="comment-blue" style="background: #109BFF;">
+<span class="icon icon-ic-comment-black-48px"></span>
+<span class="disqus-comment-count" data-disqus-url="https://itc.ua/ua/novini/pilga-na-mizhnarodni-posylky-do-150-yevro-bude-skasovana-getmantsev/">
+</span>
+</div>
+<a href="https://itc.ua/news/lgota-na-mezhdunarodnye-posylky-do-150-evro-budet-otmenena-getmantsev/" class="thumb-responsive" data-bg="https://itc.ua/wp-content/uploads/2024/10/original-400x300.jpg"></a>
+</div>
+<div class="col-xs-8 col-txt">
+<a class="entry-title" href="https://itc.ua/news/lgota-na-mezhdunarodnye-posylky-do-150-evro-budet-otmenena-getmantsev/">Льгота на международные посылки до 150 евро будет отменена — Гетманцев</a>
+<span class="comments part">
+</span>
+</div>
+</div>
+</div>
+</li><li id="execphp-14" class="block widget-container widget_execphp"> <div class="execphpwidget"> 
+<div id="div-gpt-ad-itc_rightbar_middle_300x250" style="min-width: 300px; min-height: 250px;">
+<script>
+				googletag.cmd.push(function() { googletag.display('div-gpt-ad-itc_rightbar_middle_300x250'); });
+			  </script>
+</div>
+</div>
+</li><li id="execphp-24" class="block widget-container widget_execphp"> <div class="execphpwidget"><div style="text-align: left; padding: 20px;">
+<h3 class="widget-title">Партнерские блоги</h3>
+<div style="display: flex;justify-content: space-between;flex-wrap: wrap;flex-direction: row;">
+<a href="https://itc.ua/ua/author/acer-ukraine/" class="partner-blog">
+<img src="https://itc.ua/wp-content/uploads/2024/06/375x375_logo_green-300x300.png" width="170" height="170" alt="logo acer" style="max-height: 50px;width: auto;">
+<p>Acer Україна</p>
+</a>
+<a href="https://itc.ua/ua/author/icases-ua/" class="partner-blog">
+<img src="https://itc.ua/wp-content/uploads/2024/03/logo-icases-450x185.png" width="170" height="170" alt="logo iCases" style="max-height: 75px;width: auto;">
+<p style="position: relative;top: 9px;">iCases.ua</p>
+</a>
+</div>
+<style>
+            .partner-blog{
+                border: 1px solid #D3DCE2;
+                background: #FFF;
+                display: flex;
+                align-items: center;
+                justify-content: space-around;
+                padding: 15px;
+                height: 110px;
+                width: calc(50% - 5px);
+                flex-direction: column;
+                margin-bottom: 10px;
+            }
+            .partner-blog img{
+                max-width: 100%;
+                max-height: 52px;
+            }
+            .partner-blog p{
+                color: #7E868B;
+                text-align: center;
+                font-size: 12px;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 100%;
+                margin: 0;
+                padding: 0;
+            } 
+            .partner-blog:hover{
+                border: 1px solid #109BFF;
+            }
+            .partner-blog:hover p{
+                color: #109BFF;
+                text-decoration: none;
+            }
+        </style>
+</div></div>
+</li><li id="partner-posts-3" class="block widget-container partner-posts"><h3 class="widget-title">Партнерские проекты</h3>
+<div class="post">
+<div class="row">
+<div class="col-xs-12 col-img">
+<a href="https://itc.ua/articles/chto-pomogaet-nam-sozdavat-proryvnye-reshenyya-top-tehnologyj-y-servysov-ot-favbet-tech/" class="thumb-responsive" data-bg="https://itc.ua/wp-content/uploads/2024/09/shapka22-1-268x190.png"></a>
+</div>
+<div class="col-xs-12 col-txt">
+<a class="entry-title" id="partner-post-2582453" href="https://itc.ua/articles/chto-pomogaet-nam-sozdavat-proryvnye-reshenyya-top-tehnologyj-y-servysov-ot-favbet-tech/">Что помогает нам создавать прорывные решения? Топ технологий и сервисов от Favbet Tech</a>
+<span class="comments part">
+<span class="icon icon-ic-comment-black-48px"></span>
+<span class="disqus-comment-count" data-disqus-url="https://itc.ua/ua/articles/shho-dopomagaye-nam-stvoryuvaty-proryvni-rishennya-top-tehnologij-ta-servisiv-vid-favbet-tech/" data-disqus-identifier="2581942 https://itc.ua/?p=2581942"> 
+</span>
+</span>
+</div>
+</div>
+</div>
+<div class="post">
+<div class="row">
+<div class="col-xs-12 col-img">
+<a href="https://itc.ua/articles/stavka-google-tax-y-nds-na-chto-obratyt-vnymanye-vybyraya-stranu-dlya-regystratsyy-it-kompanyy/" class="thumb-responsive" data-bg="https://itc.ua/wp-content/uploads/2024/09/itc-s-zatemnenyem-snyzu-3-268x190.png"></a>
+</div>
+<div class="col-xs-12 col-txt">
+<a class="entry-title" id="partner-post-2584903" href="https://itc.ua/articles/stavka-google-tax-y-nds-na-chto-obratyt-vnymanye-vybyraya-stranu-dlya-regystratsyy-it-kompanyy/">Ставка Google Tax и НДС: на что обратить внимание, выбирая страну для регистрации IT-компании</a>
+<span class="comments part">
+<span class="icon icon-ic-comment-black-48px"></span>
+<span class="disqus-comment-count" data-disqus-url="https://itc.ua/ua/articles/stavka-google-tax-i-pdv-na-shho-zvernuty-uvagu-vybyrayuchy-krayinu-dlya-reyestratsiyi-it-kompaniyi/" data-disqus-identifier="2584679 https://itc.ua/?p=2584679"> 
+</span>
+</span>
+</div>
+</div>
+</div>
+<div class="post">
+<div class="row">
+<div class="col-xs-12 col-img">
+<a href="https://itc.ua/articles/ot-polufabrykatov-do-kantstovarov-ot-14-magazynov-na-odnoj-platforme-kak-optymyzyrovat-onlajn-shopyng/" class="thumb-responsive" data-bg="https://itc.ua/wp-content/uploads/2024/09/itc-s-zatemnenyem-snyzu-5-268x190.png"></a>
+</div>
+<div class="col-xs-12 col-txt">
+<a class="entry-title" id="partner-post-2611475" href="https://itc.ua/articles/ot-polufabrykatov-do-kantstovarov-ot-14-magazynov-na-odnoj-platforme-kak-optymyzyrovat-onlajn-shopyng/">От полуфабрикатов до канцтоваров от 14 магазинов на одной платформе: как оптимизировать онлайн-шопинг</a>
+<span class="comments part">
+<span class="icon icon-ic-comment-black-48px"></span>
+<span class="disqus-comment-count" data-disqus-url="https://itc.ua/ua/articles/vid-napivfabykativ-do-kantstovariv-vid-14-magazyniv-na-odnij-platformi-yak-optymizuvaty-onlajn-shoping/" data-disqus-identifier="2611370 https://itc.ua/?p=2611370"> 
+</span>
+</span>
+</div>
+</div>
+</div>
+<div class="post">
+<div class="row">
+<div class="col-xs-12 col-img">
+<a href="https://itc.ua/articles/ot-ar-k-adaptyvnym-podkastam-9-sovremennyh-tehnologyj-kotorye-yzmenyat-yzuchenye-anglyjskogo/" class="thumb-responsive" data-bg="https://itc.ua/wp-content/uploads/2024/09/ITC-shapka-3-268x190.png"></a>
+</div>
+<div class="col-xs-12 col-txt">
+<a class="entry-title" id="partner-post-2618685" href="https://itc.ua/articles/ot-ar-k-adaptyvnym-podkastam-9-sovremennyh-tehnologyj-kotorye-yzmenyat-yzuchenye-anglyjskogo/">От AR к адаптивным подкастам. 9 современных технологий, которые изменят изучение английского</a>
+<span class="comments part">
+<span class="icon icon-ic-comment-black-48px"></span>
+<span class="disqus-comment-count" data-disqus-url="https://itc.ua/ua/articles/vid-ar-do-adaptyvnyh-podkastiv-9-suchasnyh-tehnologij-yaki-zminyat-vyvchennya-anglijskoyi/" data-disqus-identifier="2618265 https://itc.ua/?p=2618265"> 
+</span>
+</span>
+</div>
+</div>
+</div>
+<div class="post">
+<div class="row">
+<div class="col-xs-12 col-img">
+<a href="https://itc.ua/articles/moshhnyj-chypset-a18-makrosemka-y-obnovlennye-tsveta-iphone-16-dostupen-do-predzakaza/" class="thumb-responsive" data-bg="https://itc.ua/wp-content/uploads/2024/09/ITC-shapka-4-268x190.png"></a>
+</div>
+<div class="col-xs-12 col-txt">
+<a class="entry-title" id="partner-post-2620309" href="https://itc.ua/articles/moshhnyj-chypset-a18-makrosemka-y-obnovlennye-tsveta-iphone-16-dostupen-do-predzakaza/">iPhone 16 доступен для предзаказа. Что получат его владельцы и стоит ли он своих денег</a>
+<span class="comments part">
+<span class="icon icon-ic-comment-black-48px"></span>
+<span class="disqus-comment-count" data-disqus-url="https://itc.ua/ua/articles/potuzhnyj-chypset-a18-makroznimannya-ta-onovleni-kolory-iphone-16-dostupnyj-do-peredzamovlennya/" data-disqus-identifier="2619924 https://itc.ua/?p=2619924"> 
+</span>
+</span>
+</div>
+</div>
+</div>
+</li><li id="execphp-10" class="block widget-container widget_execphp"> <div class="execphpwidget"> 
+<div id="div-gpt-ad-itc_rightbar_bottom_300x250" style="min-width: 300px; min-height: 250px;">
+<script>
+				googletag.cmd.push(function() { googletag.display('div-gpt-ad-itc_rightbar_bottom_300x250'); });
+			  </script>
+</div>
+
+<div id="div-gpt-ad-1698314443169-0" style="min-width: 300px; min-height: 250px;">
+<script>
+				googletag.cmd.push(function() { googletag.display('div-gpt-ad-1698314443169-0'); });
+			  </script>
+</div>
+
+<div id="div-gpt-ad-1698314577464-0" style="min-width: 300px; min-height: 600px;">
+<script>
+				googletag.cmd.push(function() { googletag.display('div-gpt-ad-1698314577464-0'); });
+			  </script>
+</div>
+</div>
+</li><li id="text-3" class="block widget-container widget_text"><h3 class="widget-title">Выбор редакции</h3> <div class="textwidget"><div class="thumb-responsive lazy-load thumb-dark-6" data-bg="https://itc.ua/wp-content/uploads/2024/10/Screenshot_1-450x300.png"><p><a href="https://itc.ua/news/tetris-ot-nes-proshel-okonchatelno-cherez-35-let-16-letnyj-amerykanets-dostyg-255-urovnya-y-vozrozhdenye-ygry/">Tetris от NES прошли окончательно через 35 лет — 16-летний американец достиг 255 уровня и «возрождение» игры</a></p><span class="comments part"><a href="#itc-comments"><img loading="lazy" decoding="async" src="https://itc.ua/wp-content/themes/ITC_6.0/images/comment_outline_24.svg" height="24" width="24" alt="comment">
+<span class="disqus-comment-count" data-disqus-url="https://itc.ua/ua/novini/tetris-vid-nes-projshly-ostatochno-cherez-35-rokiv-16-richnyj-amerykanets-dosyagnuv-255-rivnya-ta-vidrodzhennya-gry/" data-disqus-identifier="2668987 https://itc.ua/?p=2668987"></span></a>
+</span></div><div class="thumb-responsive lazy-load thumb-dark-6" data-bg="https://itc.ua/wp-content/uploads/2024/10/Depositphotos_244662128_L-450x300.jpg"><p><a href="https://itc.ua/news/foxconn-stroyt-krupnejshyj-v-myre-zavod-po-vypusku-chypov-nvidia-gb200-spros-chrezvychajno-vysokyj/">Foxconn строит крупнейший в мире завод по выпуску чипов Nvidia GB200: «Спрос чрезвычайно высокий»</a></p><span class="comments part"><a href="#itc-comments"><img loading="lazy" decoding="async" src="https://itc.ua/wp-content/themes/ITC_6.0/images/comment_outline_24.svg" height="24" width="24" alt="comment">
+<span class="disqus-comment-count" data-disqus-url="https://itc.ua/ua/novini/foxconn-buduye-najbilshyj-u-sviti-zavod-iz-vypusku-chypiv-nvidia-gb200-popyt-nadzvychajno-vysokyj/" data-disqus-identifier="2668903 https://itc.ua/?p=2668903"></span></a>
+</span></div><div class="thumb-responsive lazy-load thumb-dark-6" data-bg="https://itc.ua/wp-content/uploads/2024/10/watchos-11-vitals-450x253.jpg"><p><a href="https://itc.ua/news/apple-watch-uvedomlyaet-vladeltsev-o-boleznyah-eshhe-do-poyavlenyya-symptomov/">Apple Watch уведомляет владельцев о болезнях еще до появления симптомов</a></p><span class="comments part"><a href="#itc-comments"><img loading="lazy" decoding="async" src="https://itc.ua/wp-content/themes/ITC_6.0/images/comment_outline_24.svg" height="24" width="24" alt="comment">
+<span class="disqus-comment-count" data-disqus-url="https://itc.ua/ua/novini/apple-watch-povidomlyaye-vlasnykiv-pro-hvoroby-shhe-do-poyavy-symptomiv/" data-disqus-identifier="2668672 https://itc.ua/?p=2668672"></span></a>
+</span></div><div class="thumb-responsive lazy-load thumb-dark-6" data-bg="https://itc.ua/wp-content/uploads/2024/10/05martin-scorsese3-facebookJumbo-450x253.jpg"><p><a href="https://itc.ua/news/martyn-skorseze-govoryt-chto-ne-nameren-uhodyt-na-pensyyu-y-planyruet-snyat-zhyzn-yysusa-y-synatru/">Мартин Скорсезе говорит, что «не намерен уходить на пенсию» и планирует снять «Жизнь Иисуса» и «Синатру»</a></p><span class="comments part"><a href="#itc-comments"><img loading="lazy" decoding="async" src="https://itc.ua/wp-content/themes/ITC_6.0/images/comment_outline_24.svg" height="24" width="24" alt="comment">
+<span class="disqus-comment-count" data-disqus-url="https://itc.ua/ua/novini/martin-skorseze-kazhe-shho-ne-maye-namiru-jty-na-pensiyu-i-planuye-znyaty-zhyttya-isusa-ta-sinatru/" data-disqus-identifier="2668539 https://itc.ua/?p=2668539"></span></a>
+</span></div><div class="thumb-responsive lazy-load thumb-dark-6" data-bg="https://itc.ua/wp-content/uploads/2023/05/Depositphotos_250298540_L-450x300.jpg"><p><a href="https://itc.ua/news/sud-zapretyl-google-platyt-za-eksklyuzyvnost-prylozhenyj-v-play-razmeshhenye-ee-programm-v-smartfonah-y-drugye-antykonkurentnye-praktyky/">Суд запретил Google платить за эксклюзивность приложений в Play, размещение ее программ в смартфонах и другие антиконкурентные практики</a></p><span class="comments part"><a href="#itc-comments"><img loading="lazy" decoding="async" src="https://itc.ua/wp-content/themes/ITC_6.0/images/comment_outline_24.svg" height="24" width="24" alt="comment">
+<span class="disqus-comment-count" data-disqus-url="https://itc.ua/ua/novini/sud-zaboronyv-google-platyty-za-eksklyuzyvnist-zastosunkiv-v-play-rozmishhennya-yiyi-program-v-smartfonah-ta-inshi-antykonkurentni-praktyky/" data-disqus-identifier="2668518 https://itc.ua/?p=2668518"></span></a>
+</span></div>
+</div>
+</li><li id="execphp-25" class="block widget-container widget_execphp"> <div class="execphpwidget"> 
+<div id="div-gpt-ad-1710494886547-0" style="min-width: 300px; min-height: 250px;">
+<script>
+			googletag.cmd.push(function() { googletag.display('div-gpt-ad-1710494886547-0'); });
+		  </script>
+</div>
+
+<div id="div-gpt-ad-1710494956292-0" style="min-width: 300px; min-height: 250px;">
+<script>
+			googletag.cmd.push(function() { googletag.display('div-gpt-ad-1710494956292-0'); });
+		  </script>
+</div>
+</div>
+</li> <li class="widget-sticky" style="text-align: center;">
+
+<div id="div-gpt-ad-1718199392797-0" style="min-width: 300px; min-height: 600px;">
+<script>
+                            googletag.cmd.push(function() { googletag.display('div-gpt-ad-1718199392797-0'); });
+                        </script>
+</div>
+</li>
+</ul>
+</aside> </div>
+</div>
+</section>
+<footer id="footer" class="clearfix ru_RU">
+<div class="row-1">
+<div class="container">
+<div class="row">
+<div class="col-12">
+
+<div id="div-gpt-ad-1698313200551-0" style="min-width: 970px; min-height: 250px; margin-bottom: 20px;text-align: center;" class="hidden-sm hidden-xs">
+<script>
+                                    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1698313200551-0'); });
+                                </script>
+</div>
+</div>
+<div class="col-md-3 col-logo">
+<a href="https://itc.ua/" class="custom-logo-link" title="ITC.ua" rel="home follow" itemprop="url" data-wpel-link="internal" target="_self">
+<img src="https://itc.ua/wp-content/themes/ITC_6.0/images/logo.svg" alt="ITC.ua" class="img-responsive custom-logo" width="194" height="30" itemprop="logo" loading="lazy">
+</a>
+</div>
+<div class="col-md-9 col-txt text-right">
+<ul id="menu-footer-menu" class="menu clearfix"><li id="menu-item-939963" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-939963"><a href="https://itc.ua/o-proekte/">О проекте</a></li>
+<li id="menu-item-939991" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-939991"><a href="https://itc.ua/commands/">Команда ITC</a></li>
+<li id="menu-item-682862" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-682862"><a target="_blank" rel="noopener" href="https://specials.itc.ua/">Реклама на сайте</a></li>
+<li id="menu-item-2234479" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-2234479"><a target="_blank" rel="noopener nofollow" href="https://creatorsmediagroup.com/pidtrymka-zahysnykiv-ukrayiny/">Аукцион возмездия</a></li>
+<li id="menu-item-49028" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-49028"><a rel="privacy-policy" href="https://itc.ua/user_agreement/">Пользовательское соглашение</a></li>
+<li id="menu-item-49029" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49029"><a href="https://itc.ua/confidentiality_agreement/">Политика конфиденциальности ITC.ua</a></li>
+</ul> </div>
+</div>
+<div class="row">
+<div class="col-md-6 col-12">
+<div class="copy clearfix">
+© 1993–2024 ITC.ua<br>
+Мы используем иллюстрации от <a href="https://depositphotos.com/ru/" target="_blank" rel="nofollow" style="color: #9a9a9a; font-weight: 700;">Depositphotos</a><br>
+Отдельные материалы могут содержать ссылки на партнеров. Это не влияет на контент и политику редакции, но дает изданию возможности для развития.<br>
+Контакты: редакция – <a href="/cdn-cgi/l/email-protection#f49a918387b49d8097da8195"><span class="__cf_email__" data-cfemail="86e8e3f1f5c6eff2e5a8f3e7">[email&#160;protected]</span></a>, партнерство и размещение рекламы – <a href="/cdn-cgi/l/email-protection#1d6e6d787e747c716e5d74697e33687c"><span class="__cf_email__" data-cfemail="b3c0c3d6d0dad2dfc0f3dac7d09dc6d2">[email&#160;protected]</span></a> </div>
+</div>
+<div class="col-md-6 col-12 text-right">
+<div class="sn">
+<a href="https://t.me/itcua" rel="external follow" target="_blank" class><span class="icon icon-telegram"></span></a>
+<a href="https://twitter.com/ITCUA" rel="external follow" target="_blank"><span class="icon icon-twitter-alt"></span></a>
+<a href="https://www.facebook.com/ITC.UA" rel="external follow" target="_blank"><span class="icon icon-facebook"></span></a>
+<a href="https://www.youtube.com/user/hotlinevideoua" rel="external follow" target="_blank"><span class="icon icon-youtube-alt"></span></a>
+<a href="https://itc.ua/feed" rel="external follow" target="_blank"><span class="icon icon-rss"></span></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row-2">
+<div class="container">
+<div class="row">
+<div class="col-12 col-lg-3 pt-2"><p style="color: #737373;font-size: 14px;">Поддержка серверов <a href="https://indevlab.com" target="_blank" rel="nofollow"><img src="/wp-content/themes/ITC_6.0/images/logo/idl.svg" height="30" width="101" style="height: 30px; margin-left: 20px;" alt="indevlab logo"></a></p></div>
+<div class="col-12 col-lg-3 pt-2"><p style="color: #737373;font-size: 14px;">Партнер по SEO <a href="https://netpeak.ua" target="_blank" rel="nofollow"><img src="/wp-content/themes/ITC_6.0/images/logo/netpeak.svg" height="30" width="110" style="height: 30px; margin-left: 20px;" alt="netpeak logo"></a></p></div>
+
+</div>
+</div>
+</div>
+</footer>
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    jQuery('span.spoiler').click(function(){
+        jQuery(this).removeClass('spoiler');
+    });
+jQuery(document).ready(function(){
+    jQuery(window).scroll(function () {
+        if (jQuery(this).scrollTop() > 350) {
+            jQuery('#scroller').fadeIn();
+        } else {
+            jQuery('#scroller').fadeOut();
+        }
+    });
+    jQuery('#scroller').click(function () {
+        jQuery('body,html').animate({scrollTop: 0}, 400);
+        return false;
+    });
+    jQuery('.help-block-z').click(function(){
+        info = jQuery(this).find(".help-text-z");
+        info2 = jQuery(this).find(".help-text-z:before");
+        w_all = jQuery(window).width();
+        w_info = info.outerWidth();
+        pos = info.offset().left;
+        if (pos+w_info>w_all) {
+            x = pos+w_info-w_all+40;
+            info.css("left","-"+x+"px");
+        }
+    });
+});
+</script>
+<div id="scroller" class="b-top" style="display: none;">
+<span class="b-top-but visible-md visible-lg"><span class="icon icon-ic-keyboard-arrow-up-black-48px"></span></span>
+</div>
+<script>
+bmN=navigator,bmD=document,bmD.cookie='b=b',i=0,bs=[],bm={o:1,v:148,s:148,t:0,c:bmD.cookie?1:0,n:Math.round((Math.random()* 1000000)),w:0};
+for(var f=self;f!=f.parent;f=f.parent)bm.w++;
+try{if(bmN.plugins&&bmN.mimeTypes.length&&(x=bmN.plugins['Shockwave Flash']))bm.m=parseInt(x.description.replace(/([a-zA-Z]|\s)+/,''));
+else for(var f=3;f<20;f++)if(eval('new ActiveXObject("ShockwaveFlash.ShockwaveFlash.'+f+'")'))bm.m=f}catch(e){;}
+try{bm.y=bmN.javaEnabled()?1:0}catch(e){;}
+try{bmS=screen;bm.v^=bm.d=bmS.colorDepth||bmS.pixelDepth;bm.v^=bm.r=bmS.width}catch(e){;}
+r=bmD.referrer.replace(/^w+:\/\//,'');if(r&&r.split('/')[0]!=window.location.host){bm.f=escape(r).slice(0,400);bm.v^=r.length}
+bm.v^=window.location.href.length;for(var x in bm) if(/^[ovstcnwmydrf]$/.test(x)) bs[i++]=x+bm[x];
+bmD.write('<sc'+'ript type="text/javascript" language="javascript" src="//c.bigmir.net/?'+bs.join('&')+'"></sc'+'ript>');
+</script><style>html{font-size:16px;}</style><style id="core-block-supports-inline-css" type="text/css">
+/**
+ * Core styles: block-supports
+ */
+
+</style>
+<script type="text/javascript" src="https://itc.ua/wp-includes/js/imagesloaded.min.js?ver=5.0.0" id="imagesloaded-js"></script>
+<script type="text/javascript" src="https://itc.ua/wp-content/plugins/image-comparison-block/assets/js/jquery.event.move.js?ver=74c9ac9f36e715b6bd3edca32b11b6a7" id="jquery-event-move-js"></script>
+<script type="text/javascript" src="https://itc.ua/wp-content/plugins/image-comparison-block/assets/js/jquery.twentytwenty.js?ver=74c9ac9f36e715b6bd3edca32b11b6a7" id="jquery-twentytwenty-js"></script>
+<script type="text/javascript" src="https://itc.ua/wp-content/plugins/image-comparison-block/assets/js/image-comparison.js?ver=74c9ac9f36e715b6bd3edca32b11b6a7" id="ideabox-image-comparison-block-js"></script>
+<script type="text/javascript" src="https://itc.ua/wp-content/plugins/metronet-profile-picture/js/mpp-frontend.js?ver=2.6.0" id="mpp_gutenberg_tabs-js"></script>
+<script type="text/javascript" id="toc-front-js-extra">
+/* <![CDATA[ */
+var tocplus = {"smooth_scroll":"1","visibility_show":"\u043f\u043e\u043a\u0430\u0437\u0430\u0442\u044c","visibility_hide":"\u0441\u043f\u0440\u044f\u0442\u0430\u0442\u044c","visibility_hide_by_default":"1","width":"Auto"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://itc.ua/wp-content/plugins/table-of-contents-plus/front.min.js?ver=2002" id="toc-front-js"></script>
+<script type="text/javascript" id="wp-polls-js-extra">
+/* <![CDATA[ */
+var pollsL10n = {"ajax_url":"https:\/\/itc.ua\/wp-admin\/admin-ajax.php","text_wait":"\u0412\u0430\u0448 \u043f\u043e\u0441\u043b\u0435\u0434\u043d\u0438\u0439 \u0437\u0430\u043f\u0440\u043e\u0441 \u0435\u0449\u0435 \u043e\u0431\u0440\u0430\u0431\u0430\u0442\u044b\u0432\u0430\u0435\u0442\u0441\u044f. \u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430 \u043f\u043e\u0434\u043e\u0436\u0434\u0438\u0442\u0435 ...","text_valid":"\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430 \u043a\u043e\u0440\u0440\u0435\u043a\u0442\u043d\u043e \u0432\u044b\u0431\u0435\u0440\u0438\u0442\u0435 \u043e\u0442\u0432\u0435\u0442.","text_multiple":"\u041c\u0430\u043a\u0441\u0438\u043c\u0430\u043b\u044c\u043d\u043e \u0434\u043e\u043f\u0443\u0441\u0442\u0438\u043c\u043e\u0435 \u0447\u0438\u0441\u043b\u043e \u0432\u0430\u0440\u0438\u0430\u043d\u0442\u043e\u0432:","show_loading":"1","show_fading":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://itc.ua/wp-content/plugins/wp-polls/polls-js.js?ver=2.75.5" id="wp-polls-js"></script>
+<script type="text/javascript" src="https://itc.ua/wp-content/plugins/mistape/assets/js/modernizr.custom.js?ver=1.3.9" id="modernizr-js"></script>
+<script type="text/javascript" id="mistape-front-js-extra">
+/* <![CDATA[ */
+var decoMistape = {"ajaxurl":"https:\/\/itc.ua\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://itc.ua/wp-content/plugins/mistape/assets/js/mistape-front.js?ver=1644229819" id="mistape-front-js"></script>
+<script type="text/javascript" id="uwp_recaptcha_js_api-js-extra">
+/* <![CDATA[ */
+var uwp_recaptcha_data = {"site_key":"6LfMsa0mAAAAAOM9HxPVE-Bc_XsqIRzrGY8Eiev4","captcha_version":"default","captcha_theme":"light","ajaxurl":"https:\/\/itc.ua\/wp-admin\/admin-ajax.php"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://www.recaptcha.net/recaptcha/api.js?onload=uwp_init_recaptcha&amp;hl=ru&amp;render=explicit&amp;ver=1.3.13" id="uwp_recaptcha_js_api-js"></script>
+<script type="text/javascript" id="uwp_recaptcha_js_api-js-after">
+/* <![CDATA[ */
+            
+                function uwp_init_recaptcha() {
+                    if ( jQuery('.uwp-captcha-render').length) {
+                        jQuery('.uwp-captcha-render').each(function() {
+                            if(jQuery(this).html()==''){
+                                var container = jQuery(this).attr('id');
+                                if (container) {
+                                    try {
+                                        eval(container + '()');
+                                    } catch(err) {
+                                        console.log(err);
+                                    }
+                                }
+                            }
+                        });
+                    }
+                }
+
+                function uwp_reset_captcha(element){
+                    if(uwp_recaptcha_data.captcha_version == 'v3') {
+                        if (typeof grecaptcha != 'undefined') {
+                            holderId = grecaptcha.execute(uwp_recaptcha_data.site_key, {action: 'uwp_captcha'}).then(function (token) {
+                                document.getElementById(element).value = token;
+                            });
+                        }
+
+                    } else {
+                        if (typeof grecaptcha != 'undefined') {
+                            grecaptcha.reset();
+                        }
+                    }
+                }
+            
+            
+/* ]]> */
+</script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js?ver=4.6.4" id="fotorama-js-js"></script>
+<script type="text/javascript" src="https://itc.ua/wp-content/themes/ITC_6.0/assets/vendor/lazy-load-xt/jquery.lazyloadxt.min.js?ver=1.1.1" id="lazyloadxt-js"></script>
+<script type="text/javascript" src="https://itc.ua/wp-content/themes/ITC_6.0/assets/vendor/lazy-load-xt/jquery.lazyloadxt.extra.min.js?ver=1.1.0" id="lazyloadxt-extra-js"></script>
+<script type="text/javascript" src="https://itc.ua/wp-content/themes/ITC_6.0/assets/vendor/lazy-load-xt/jquery.lazyloadxt.bg.js?ver=1.1.4" id="lazyloadxt-bg-js"></script>
+<script type="text/javascript" src="https://itc.ua/wp-content/themes/ITC_6.0/assets/vendor/lazy-load-xt/jquery.lazyloadxt.srcset.min.js?ver=1.1.0" id="lazyloadxt-srcset-js"></script>
+<script type="text/javascript" src="https://itc.ua/wp-content/themes/ITC_6.0/assets/js/main.js?ver=1.00" id="main-js"></script>
+<script type="text/javascript">
+(function() {
+				var expirationDate = new Date();
+				expirationDate.setTime( expirationDate.getTime() + 31536000 * 1000 );
+				document.cookie = "pll_language=ru; expires=" + expirationDate.toUTCString() + "; path=/; secure; SameSite=Lax";
+			}());
+
+</script>
+<div id="mistape_dialog" data-mode="confirm" data-dry-run="0">
+<div class="dialog__overlay"></div><div class="dialog__content without-comment"><div id="mistape_confirm_dialog" class="mistape_dialog_screen">
+<div class="dialog-wrap">
+<div class="dialog-wrap-top">
+<p class="mistape-h2">Сообщить об опечатке</p>
+<div class="mistape_dialog_block">
+<p class="mistape-h3">Текст, который будет отправлен нашим редакторам:</p>
+<div id="mistape_reported_text"></div>
+</div>
+</div>
+<div class="dialog-wrap-bottom"><div class="pos-relative">
+</div>
+</div>
+</div>
+<div class="mistape_dialog_block">
+<a class="mistape_action" data-action="send" data-id="2046128" role="button">Отправить</a>
+<a class="mistape_action" data-dialog-close role="button" style="display:none">Отмена</a>
+</div>
+<div class="mistape-letter-front letter-part">
+<div class="front-left"></div>
+<div class="front-right"></div>
+<div class="front-bottom"></div>
+</div>
+<div class="mistape-letter-back letter-part">
+<div class="mistape-letter-back-top"></div>
+</div>
+<div class="mistape-letter-top letter-part"></div>
+</div></div></div>
+
+<div id="cookie-notice" role="dialog" class="cookie-notice-hidden cookie-revoke-hidden cn-position-bottom" aria-label="Cookie Notice" style="background-color: rgba(50,50,58,1);"><div class="cookie-notice-container" style="color: #fff;"><span id="cn-notice-text" class="cn-text-container">Переглядаючи цей сайт, ви погоджуєтесь з нашою <a href="https://itc.ua/ua/politika-konfidenczijnosti-itc-ua/">політикою конфіденційності</a></span><span id="cn-notice-buttons" class="cn-buttons-container"><a href="#" id="cn-accept-cookie" data-cookie-set="accept" class="cn-set-cookie cn-button" aria-label="Ok" style="background-color: #00a99d">Ok</a></span><span id="cn-close-notice" data-cookie-set="accept" class="cn-close-icon" title="No"></span></div>
+</div>
+
+<script>
+jQuery(document).ready(function($){
+    var select = jQuery('a[href*=".jfif"]:has(img),a[href*=".webp"]:has(img),a[href*=".bmp"]:has(img),a[href*=".gif"]:has(img),a[href*=".jpg"]:has(img),a[href*=".jpeg"]:has(img),a[href*=".png"]:has(img),a[href*=".JFIF"]:has(img),a[href*=".WEBP"]:has(img),a[href*=".BMP"]:has(img),a[href*=".GIF"]:has(img),a[href*=".JPG"]:has(img),a[href*=".JPEG"]:has(img),a[href*=".PNG"]').not('.gallery-item');
+    select.attr('data-fancybox', 'group');
+    
+    select.fancybox();
+});
+</script>
+
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WQ63DMM" 
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<script>
+jQuery(document).ready(function() {
+	jQuery( '.itc-slick-carousel' ).on( "click", ".arrow-holder", function() {
+		jQuery(this).parent().find('.lazy-load').each(function(index, element){
+			var thumb_url = jQuery(element).data('bg');
+			if(thumb_url) {
+				jQuery(element).css('background-image', "url('" + thumb_url + "')")
+	                .removeAttr('data-bg')
+	                .triggerHandler('load');
+			}
+		});
+	});
+});
+</script>
+<script id="dsq-count-scr" src="//itcua.disqus.com/count.js" async></script>
+<style>
+        .popup-bottom{
+            position: fixed;
+            z-index: 10000;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            background: #109BFF;
+            /*backdrop-filter: blur(10px);*/
+            display: none;
+        }
+
+        .popup-bottom img{
+            max-width: 100%;
+        }
+
+        .popup-bottom .container{
+            position: relative;
+            padding: 5px 0px;
+        }
+
+        .popup-bottom img.popup-bottom-close{
+            position: absolute;
+            right: -20px;
+            top: -20px;
+            cursor: pointer;
+        }
+
+        .popup-bottom .col-12{
+            text-align: center;
+        }
+
+        .slideUp{
+            animation-name: slideUp;
+            -webkit-animation-name: slideUp;
+
+            animation-duration: 1s;
+            -webkit-animation-duration: 1s;
+
+            animation-timing-function: ease;
+            -webkit-animation-timing-function: ease;
+
+            visibility: visible !important;
+        }
+
+        @media (max-width: 768px) {
+            .popup-bottom img.popup-bottom-close {
+                right: 10px;
+            }
+            .popup-bottom .col-12{
+                padding: 0 15px;
+            }
+        }
+    </style>
+<div class="popup-bottom slideUp">
+<div class="container">
+<div class="row">
+<div class="col-12">
+<a href="https://itc.ua/ua/vidklyuchyty-reklamu/">
+<img src="https://itc.ua/wp-content/themes/ITC_6.0/images/banners/rek-d1.svg" class="hidden-xs hidden-sm">
+<img src="https://itc.ua/wp-content/themes/ITC_6.0/images/banners/rek-m2.svg" class="visible-sm visible-xs">
+</a>
+</div>
+</div>
+<img src="https://itc.ua/wp-content/themes/ITC_6.0/images/close_popup.svg" width="40" height="40" class="popup-bottom-close">
+</div>
+<script>
+        var x = jQuery.cookie('popupbottom');
+        if (x == null) jQuery('.popup-bottom').css('display','block');
+
+        jQuery('.popup-bottom-close').click(function (e){
+            x = jQuery.cookie('popupbottom');
+            jQuery('.popup-bottom').fadeOut('fast');
+            if ( x == null ) {
+                jQuery.cookie('popupbottom', '1', { path: '/' });
+            } /*else {
+                if (x<3){
+                    x++;
+                    jQuery.cookie('popupbottom', x, { expires: 365, path: '/' });
+                }
+            }*/
+        });
+
+        jQuery('.popup-bottom a').click(function (e){
+            x = jQuery.cookie('popupbottom');
+            if ( x == null ) {
+                jQuery.cookie('popupbottom', '1', { path: '/' });
+            } /*else {
+                if (x<3){
+                    x++;
+                    jQuery.cookie('popupbottom', x, { expires: 365, path: '/' });
+                }
+            }*/
+        });
+
+    </script>
+</body>
+</html>
+
